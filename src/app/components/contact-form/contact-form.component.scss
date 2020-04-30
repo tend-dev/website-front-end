@@ -1,0 +1,50 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.contact {
+    margin:0 40px 40px 40px;
+
+    .close {
+        text-align: right;
+        cursor: pointer;
+    }
+    .sub {
+        width: 370px;
+        @include sub();
+    }
+
+    h1 {
+        @include h3();
+    }
+
+    .example-form {
+        min-width: 150px;
+        max-width: 370px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+
+    .btn-contact {
+        width: 370px;
+
+        font-size: 17px;
+        font-weight: bold;
+        color: $white;
+        background-color: $orange;
+        border-radius: 30px;
+        padding: 12px 40px;
+    }
+}
+
+::ng-deep.mat-dialog-container {
+    border-radius: 0 !important;
+    border-top-left-radius: 40px !important; 
+    border-bottom-left-radius: 40px !important; 
+}
+
+::ng-deep.cdk-overlay-pane {
+    max-width: 100% !important;
+}

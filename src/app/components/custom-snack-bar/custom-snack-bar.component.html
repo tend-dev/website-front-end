@@ -1,0 +1,7 @@
+<div>
+    <img *ngIf="!data.isError" src="/assets/img/success.png" width="34">
+    <img *ngIf="data.isError" src="/assets/img/error.png" width="34">
+    <div class="h3">
+        {{ data.message}}
+    </div>
+</div>

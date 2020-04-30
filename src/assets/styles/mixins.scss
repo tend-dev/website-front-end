@@ -1,0 +1,53 @@
+@use "sass:map";
+
+@import 'variables';
+
+// H4 class
+@mixin h4() {
+    color: $dark_gray;
+    font-family: 'Calibre-Bold';
+    font-size: 60px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+@mixin h3() {
+    font-family: 'Calibre-Bold';
+    font-size: 33px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+    letter-spacing: normal;
+    color: $color_h;
+}
+
+@mixin sub() {
+    font-size: 23px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    color: $color_text;
+}
+
+// mobile
+$breakpoints-mobile: (
+  min: 1px,
+  max: 600px
+);
+
+$breakpoints-tablet: (
+  min: 601px,
+  max-portrait: 900px,
+  max-landscape: 1200px,
+  max: 1200px
+);
+
+// Mobile phone rules
+@mixin mobile-only {
+  @media (max-width: map-get($breakpoints-mobile, "max") ) {
+    @content;
+  }
+}

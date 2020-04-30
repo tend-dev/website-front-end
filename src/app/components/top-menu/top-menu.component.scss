@@ -1,0 +1,50 @@
+@import '../../../assets/styles/variables';
+
+.top-nav {
+    width: 1400px;
+    height: 100px;
+    background-color: $white;
+
+    .btn-contact {
+        background-color: #49c3eb;
+        color: $white;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 12px 40px;
+    }
+
+    .logo {
+        width: 200px;
+        display:inline-block;
+        margin-left: 45px;
+        vertical-align: middle;
+    }
+
+    .nav {
+        width: 700px;
+        display:inline-block;
+        a {
+            font-family: 'Calibre-Regular';
+            font-size: 17px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color_text;
+            text-decoration: none;
+            padding-right: 26px;
+            line-height: 100px;
+        }
+    }
+    .phone {
+        width: 245px;
+        display: inline-block;
+        color: $color_text;
+        img {
+            position: relative;
+            top: 12px;
+            padding-right: 10px;
+        }
+    }
+}

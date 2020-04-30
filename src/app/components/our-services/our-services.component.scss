@@ -1,0 +1,63 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.services {
+    margin: 0 215px;
+
+    .h4 {
+        margin-top: 197px;
+
+        @include h4();
+    }
+
+    .sub {
+        width: 498px;
+        margin-top: 16px;
+
+        font-size: 23px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.3;
+        letter-spacing: normal;
+        color: $color_text;
+
+        margin-bottom: 40px;
+    }
+
+    .s-list {
+        margin-bottom: 100px;
+    }
+    h4 {
+        font-family: 'Calibre-Bold';
+        font-size: 23px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.3;
+        letter-spacing: normal;
+        color: $color_h;
+    }
+    p {
+        font-family: 'Calibre-Regular';
+
+        @include sub();
+    }
+
+    ::ng-deep .mat-tab-label {
+        padding: 0 20px;
+        min-width: 100px;
+    }
+
+    img {
+        height: 46px;
+    }
+
+    ::ng-deep .mat-tab-header {
+        border-bottom: 0;
+    }
+
+    ::ng-deep .mat-ink-bar {
+        background-color: #ee8e64;
+    }
+}

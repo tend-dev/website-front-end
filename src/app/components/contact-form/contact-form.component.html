@@ -1,0 +1,61 @@
+<section class="contact">
+    <div class="close" (click)="onNoClick()">
+        <img src="/assets/img/blue-close.png" alt="" width="40" height="40">
+    </div>
+    <h1 mat-dialog-title>Get in touch</h1>
+    <div mat-dialog-content>
+        
+        <div class="sub">
+            Want to find out more about Tend's services for yourself or a loved one? Get in touch using this form and we'll get back to you as soon as possible.
+        </div>
+
+        <form class="example-form" #contactForm="ngForm">
+            <mat-form-field class="example-full-width">
+              <mat-label>First Name</mat-label>
+              <input [(ngModel)]="data.firstName" name="firstName" required matInput placeholder="First Name" value="">
+              <button mat-button *ngIf="data.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="data.firstName=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Last Name</mat-label>
+                <input [(ngModel)]="data.lastName" name="lastName" required matInput placeholder="Last Name" value="">
+                <button mat-button *ngIf="data.lastName" matSuffix mat-icon-button aria-label="Clear" (click)="data.lastName=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="data.email" name="email" required matInput placeholder="Email" value="">
+                <button mat-button *ngIf="data.email" matSuffix mat-icon-button aria-label="Clear" (click)="data.email=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Home Phone</mat-label>
+                <input [(ngModel)]="data.phone" name="phone" matInput placeholder="Home Phone" value="">
+                <button mat-button *ngIf="data.phone" matSuffix mat-icon-button aria-label="Clear" (click)="data.phone=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Message</mat-label>
+                <input [(ngModel)]="data.message" name="message" required matInput placeholder="Message" value="">
+                <button mat-button *ngIf="data.message" matSuffix mat-icon-button aria-label="Clear" (click)="data.message=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+          
+        </form>
+
+    </div>
+    <div mat-dialog-actions>
+        <button
+            (click)="checkValidation(contactForm.invalid)"
+            class="btn-contact" mat-flat-button>Submit</button>
+    </div>
+</section>

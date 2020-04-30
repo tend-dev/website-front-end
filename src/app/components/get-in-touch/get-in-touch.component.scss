@@ -1,0 +1,50 @@
+@import '../../../assets/styles/variables';
+
+.footer {
+    height: 442px;
+    width: 1400px;
+    display: inline-block;
+    background-image: url('/assets/img/footer.png');
+    background-position: center;
+
+    .h4 {
+        width: 340px;
+        height: 60px;
+        position: relative;
+        top: 117px;
+        left: 551px;
+
+        color: $white;
+        font-family: 'Calibre-Bold';
+        font-size: 60px;
+        font-weight: bold;
+    }
+    .sub {
+        position: relative;
+        top: 140px;
+        left: 496px;
+        width: 440px;
+        height: 60px;
+
+        color: $white;
+        font-family: 'Calibre-Regular';
+        line-height: 30px;
+        font-size: 23px;
+        text-align: center;
+    }
+    .for-btn {
+        position: relative;
+        top: 170px;
+        left: 615px;
+        width: 463px;
+        height: 40px;
+        button {
+            font-size: 15px;
+            font-weight: bold;
+            color: $color_h;
+            background-color: $white;
+            border-radius: 30px;
+            padding: 12px 40px;
+        }
+    }
+}

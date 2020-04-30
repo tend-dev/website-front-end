@@ -1,0 +1,22 @@
+<section>
+    <div class="blog">
+        <div class="h4">Blog</div>
+
+        <div class="wrapper">
+            <div class="col-{{ i+1 }}" *ngFor="let post of posts; index as i">
+                <img src="{{ beUrl }}{{post.image}}" alt="" width="370" height="200">
+    
+                <div class="h3">{{ post.title }}</div>
+                <p>
+                    {{ post.content }}
+                </p>
+    
+                <div class="created">
+                    {{ post.created | date }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <app-get-in-touch></app-get-in-touch>
+</section>

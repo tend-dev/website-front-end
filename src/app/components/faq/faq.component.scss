@@ -1,0 +1,67 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.faq-bg {
+    background-image: url('/assets/img/faq/faq-bg02.png');
+    background-position-y: 80px;
+    background-position-x: 1156px;
+    background-size: 97px 102px;
+    background-repeat: no-repeat;
+}
+
+.blog {
+    margin: 0 0 40px 0;
+    padding: 0 215px 0 215px;
+    background-image: url('/assets/img/faq/faq-bg01.png');
+    background-position-y: 80px;
+    background-position-x: 150px;
+    background-size: 97px 102px;
+    background-repeat: no-repeat;
+
+    .h4 {
+        margin-top: 50px;
+        text-align: center;
+
+        @include h4();
+    }
+    .sub {
+        margin-top: 15px;
+        text-align: center;
+        margin-bottom: 40px;
+
+        @include sub();
+    }
+    .gray-wrapper {
+        padding: 40px;
+
+        background-color: $faq_bg_color;
+        border-radius: 40px;
+    }
+    .question {
+        padding: 40px 40px 0 40px;
+
+        &.expanded {
+            background-color: $white;
+            border-radius: 30px;
+        }
+    }
+    h3 {
+        @include h3();
+
+        margin-top: 0;
+
+        .minus {
+            float: right;
+            display: block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+    .answer {
+        @include sub();
+
+        margin-right: 116px;
+        padding-bottom: 40px;
+    }
+}

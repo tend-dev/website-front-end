@@ -1,0 +1,22 @@
+<div class="top-nav">
+    <span class="logo">
+        <a routerLink="/">
+            <img src="/assets/img/logo.png" alt="Logo">
+        </a>
+    </span>
+    <span class="nav">
+        <a [routerLink]='"."' fragment="what-we-do">What we do</a>
+        <a [routerLink]='"."' fragment="what-we-do">Our purpose</a>
+        <a [routerLink]='"."' fragment="services">Our services</a>
+        <a [routerLink]='"."' fragment="why-choose">Why choose Tend?</a>
+        <a [routerLink]='"."' fragment="faq">FAQ</a>
+        <a routerLink="/about-us">About us</a>
+    </span>
+    <span class="phone">
+        <img src="/assets/img/phone.png" height="34" width="34">
+        1800 836 322
+    </span>
+    <span>
+        <button (click)="openDialog()" class="btn-contact" mat-flat-button>Contact Us</button>
+    </span>
+</div>

@@ -1,0 +1,67 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+
+.why-choose {
+    width: 1400px;
+    display: inline-block;
+    background-image: url('/assets/img/why-choose.png');
+    background-position-y: 150px;
+    background-position-x: 668px;
+    background-repeat: no-repeat;
+
+    .h4 {
+        width: 360px;
+        height: 120px;
+        margin-top: 242px;
+        margin-left: 215px;
+
+        @include h4();
+    }
+    .sub {
+        margin-top: 25px;
+        margin-left: 215px;
+
+        width: 370px;
+        height: 180px;
+
+        color: $color_text;
+        font-size: 23px;
+        line-height: 1.3;
+
+        margin-bottom: 105px;
+    }
+    h3 {
+        font-family: 'Calibre-Bold';
+        font-size: 33px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: $color_h;
+
+        line-height: 1.09;
+        margin-left: 215px;
+        margin-bottom: 18px;
+    }
+    p {
+        font-family: 'Calibre-Regular';
+        font-size: 23px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.3;
+        letter-spacing: normal;
+        color: $color_text;
+
+        margin-left: 215px;
+        margin-right: 215px;
+
+        margin-bottom: 30px;
+    }
+    img {
+        margin-left: 215px;
+    }
+    .last {
+        margin-bottom: 80px;
+    }
+}

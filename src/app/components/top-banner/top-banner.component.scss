@@ -1,0 +1,52 @@
+@import '../../../assets/styles/variables';
+
+.banner {
+    height: 800px;
+    width: 1400px;
+    display: inline-block;
+    background-image: url('/assets/img/banner.png');
+    background-position: center;
+    .h4 {
+        width: 463px;
+        height: 180px;
+        position: relative;
+        top: 242px;
+        left: 215px;
+
+        color: $white;
+        font-family: 'Calibre-Bold';
+        font-size: 60px;
+        font-weight: bold;
+        line-height: normal;
+    }
+    .sub {
+        position: relative;
+        top: 290px;
+        left: 215px;
+        width: 463px;
+        height: 40px;
+
+        color: $white;
+        font-size: 22px;
+        line-height: 1.36;
+    }
+    .for-btn {
+        position: relative;
+        top: 290px;
+        left: 215px;
+        width: 463px;
+        height: 40px;
+        button {
+            font-size: 17px;
+            font-weight: bold;
+            color: $white;
+            background-color: #ee8e64;
+            border-radius: 30px;
+            padding: 12px 40px;
+
+            img {
+                padding-left: 20px;
+            }
+        }
+    }
+}
