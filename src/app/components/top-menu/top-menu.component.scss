@@ -1,9 +1,31 @@
 @import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.top-nav-mobile {
+    height: 60px;
+    background-color: $white;
+    margin: 20px 30px 0 30px;
+    @include desktop {
+        display: none;
+    }
+    @include mobile-only {
+        display: block;
+    }
+
+    .m-menu {
+        cursor: pointer;
+        float: right;
+    }
+}
 
 .top-nav {
     width: 1400px;
     height: 100px;
     background-color: $white;
+
+    @include mobile-only {
+        display: none;
+    }
 
     .btn-contact {
         background-color: #49c3eb;

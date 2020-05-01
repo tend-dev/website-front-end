@@ -5,12 +5,11 @@
 
         <div class="gray-wrapper">
             <div class="question" [ngClass]="{expanded: question.isExpanded}" *ngFor="let question of questions">
-                <h3>{{ question.question }}
-                    <span (click)="toggleExpand(question)" class="minus">
-                        <img *ngIf="!question.isExpanded" src="/assets/img/faq/faq-plus.svg" alt="Toggle" width="40" height="40">
-                        <img *ngIf="question.isExpanded" src="/assets/img/faq/faq-minus.png" alt="Toggle" width="40" height="40">
-                    </span>
-                </h3>
+                <span (click)="toggleExpand(question)" class="minus">
+                    <img *ngIf="!question.isExpanded" src="/assets/img/faq/faq-plus.svg" alt="Toggle">
+                    <img *ngIf="question.isExpanded" src="/assets/img/faq/faq-minus.png" alt="Toggle">
+                </span>
+                <h3>{{ question.question }}</h3>
                 <div class="answer" *ngIf="question.isExpanded">
                     {{ question.answer }}
                 </div>

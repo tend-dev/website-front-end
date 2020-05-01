@@ -14,4 +14,7 @@ export class TopMenuComponent {
     this.contactService.openDialog();
   }
 
+  openModalMenu(): void {
+    console.log('Open modal menu');
+  }
 }

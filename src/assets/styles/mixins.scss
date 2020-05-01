@@ -21,6 +21,16 @@
     letter-spacing: normal;
     color: $color_h;
 }
+@mixin h1() {
+  font-family: 'Calibre-Bold';
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $color_h;
+}
 
 @mixin sub() {
     font-size: 23px;
@@ -48,6 +58,11 @@ $breakpoints-tablet: (
 // Mobile phone rules
 @mixin mobile-only {
   @media (max-width: map-get($breakpoints-mobile, "max") ) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: map-get($breakpoints-mobile, "min")) {
     @content;
   }
 }

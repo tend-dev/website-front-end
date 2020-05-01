@@ -9,6 +9,13 @@
     background-position-y: 134px;
     background-position-x: 215px;
     background-repeat: no-repeat;
+    @include mobile-only {
+        width: unset;
+        margin: 20px 30px;
+        background-position-y: 10px;
+        background-position-x: 15px;
+        background-size: 244px 248px;
+    }
 
     .h4 {
         width: 463px;
@@ -18,6 +25,13 @@
         left: 715px;
 
         @include h4();
+
+        @include mobile-only {
+            left: unset;
+            width: unset;
+            font-size: 45px;
+            text-align: center;
+        }
     }
     .sub {
         position: relative;
@@ -29,6 +43,14 @@
         color: $color_text;
         font-size: 23px;
         line-height: 1.3;
+
+        @include mobile-only {
+            left: unset;
+            width: unset;
+            font-size: 17px;
+            line-height: 25px;
+            text-align: center;
+        }
     }
     .for-btn {
         position: relative;
@@ -36,11 +58,17 @@
         left: 715px;
         width: 463px;
         height: 40px;
+        @include mobile-only {
+            left: unset;
+            width: unset;
+            height: unset;
+            text-align: center;
+        }
         button {
             font-size: 17px;
             font-weight: bold;
             color: $white;
-            background-color: #49c3eb;
+            background-color: $primary;
             border-radius: 30px;
             padding: 12px 40px;
         }

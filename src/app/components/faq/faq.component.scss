@@ -7,6 +7,9 @@
     background-position-x: 1156px;
     background-size: 97px 102px;
     background-repeat: no-repeat;
+    @include mobile-only {
+        background-image: none;
+    }
 }
 
 .blog {
@@ -17,12 +20,21 @@
     background-position-x: 150px;
     background-size: 97px 102px;
     background-repeat: no-repeat;
+    @include mobile-only {
+        width: unset;
+        padding: 0 30px 0 30px;
+        background-image: none;
+    }
 
     .h4 {
         margin-top: 50px;
         text-align: center;
 
         @include h4();
+        @include mobile-only {
+            font-size: 45px;
+            margin-top: 20px;
+        }
     }
     .sub {
         margin-top: 15px;
@@ -30,15 +42,26 @@
         margin-bottom: 40px;
 
         @include sub();
+        @include mobile-only {
+            font-size: 17px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
     }
     .gray-wrapper {
         padding: 40px;
 
         background-color: $faq_bg_color;
         border-radius: 40px;
+        @include mobile-only {
+            padding: 10px;
+        }
     }
     .question {
         padding: 40px 40px 0 40px;
+        @include mobile-only {
+            padding: 15px 20px 0 20px;
+        }
 
         &.expanded {
             background-color: $white;
@@ -49,13 +72,33 @@
         @include h3();
 
         margin-top: 0;
+        @include mobile-only {
+            font-size: 23px;
+            line-height: 24px;
+            width: 170px;
+        }
 
-        .minus {
-            float: right;
-            display: block;
+    }
+    .minus {
+        float: right;
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        img {
             width: 40px;
             height: 40px;
-            cursor: pointer;
+            @include mobile-only {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        @include mobile-only {
+            position: relative;
+            // top: -20px;
+            right: -14px;
+            width: 30px;
+            height: 30px;
         }
     }
     .answer {
@@ -63,5 +106,10 @@
 
         margin-right: 116px;
         padding-bottom: 40px;
+        @include mobile-only {
+            font-size: 17px;
+            margin-right: 40px;
+            padding-bottom: 15px;
+        }
     }
 }

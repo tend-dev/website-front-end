@@ -4,7 +4,7 @@
 
     <div class="wrapper">
         <div class="col-{{ i+1 }}" *ngFor="let post of posts; index as i">
-            <img *ngIf="post.image" src="{{ beUrl }}{{ post.image }}" alt="" width="270" height="145">
+            <img *ngIf="post.image" src="{{ beUrl }}{{ post.image }}" alt="">
 
             <div class="h3">{{ post.title }}</div>
 
