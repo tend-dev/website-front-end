@@ -28,10 +28,15 @@
 
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input [(ngModel)]="data.email" name="email" required matInput placeholder="Email" value="">
+                <input [(ngModel)]="data.email" name="email" required #email="ngModel"
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" matInput placeholder="Email" value="">
                 <button mat-button *ngIf="data.email" matSuffix mat-icon-button aria-label="Clear" (click)="data.email=''">
                     <mat-icon>close</mat-icon>
-                  </button>
+                </button>
+
+                <mat-error *ngIf="email.errors && (email.invalid || email.touched)">
+                    Please enter a valid email address
+                  </mat-error>
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
