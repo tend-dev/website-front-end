@@ -1,0 +1,57 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.app-mobile-menu-class {
+    max-width: unset !important;
+    width: 100%;
+}
+::ng-deep.app-mobile-menu-class .mat-dialog-container {
+    border-radius: 0 !important;
+}
+.mobile-menu {
+    text-align: center;
+    color: $color_text;
+    .btn-contact {
+        background-color: $primary;
+        color: $white;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 12px 40px;
+    }
+    .close {
+        text-align: left;
+    }
+    .close-btn {
+        float: right;
+    }
+    .nav {
+        padding: 30px 0 20px 0;
+        div {
+            padding: 10px 0;
+
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color_text;
+            }
+        }
+    }
+    .btn-wrapper {
+        padding: 14px 0;
+    }
+    
+    .phone {
+        padding: 14px 0;
+        font-size: 24px;
+        img {
+            position: relative;
+            top: 12px;
+            padding-right: 10px;
+        }
+    }
+}

@@ -46,9 +46,9 @@
         border-radius: 30px;
         padding: 12px 40px;
     }
-}
 
-::ng-deep.mat-dialog-container {
+}
+::ng-deep.app-panel-class .mat-dialog-container {
     border-radius: 0 !important;
     border-top-left-radius: 40px !important; 
     border-bottom-left-radius: 40px !important; 

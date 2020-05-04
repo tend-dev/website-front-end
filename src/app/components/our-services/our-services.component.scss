@@ -9,6 +9,7 @@
 
     .h4 {
         margin-top: 197px;
+        text-align: center;
 
         @include h4();
         @include mobile-only {

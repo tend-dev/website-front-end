@@ -26,10 +26,10 @@
         font-weight: bold;
         line-height: normal;
         @include mobile-only {
-            width: 200px;
+            width: 240px;
             left: 30px;
-            font-size: 32px;
-            top: 120px;
+            font-size: 40px;
+            top: 110px;
         }
     }
     .sub {
@@ -43,9 +43,9 @@
         font-size: 22px;
         line-height: 1.36;
         @include mobile-only {
-            width: 200px;
+            width: 240px;
             left: 30px;
-            font-size: 15px;
+            font-size: 22px;
             top: 70px;
         }
     }
@@ -58,7 +58,7 @@
         @include mobile-only {
             width: 280px;
             left: 30px;
-            top: 80px;
+            top: 90px;
         }
         button {
             font-size: 17px;

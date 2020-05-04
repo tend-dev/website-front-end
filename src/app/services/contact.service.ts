@@ -8,6 +8,7 @@ import { environment } from '@env/environment.prod';
 import { ContactFormComponent } from '../components/contact-form/contact-form.component';
 import { ContactForm } from '../models/contact-form.model';
 import { AlertService } from '@app/services/alert.service';
+import { MobileMenuComponent } from '@app/components/mobile-menu/mobile-menu.component';
 
 @Injectable({ providedIn: 'root' })
 export class ContactService {

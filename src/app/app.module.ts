@@ -30,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-snack-bar.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-sn
     GetInTouchComponent,
     ContactFormComponent,
     BlogAreaComponent,
-    CustomSnackBarComponent
+    CustomSnackBarComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

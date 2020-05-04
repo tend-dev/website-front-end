@@ -1,0 +1,34 @@
+<section class="mobile-menu" (click)="onNoClick()">
+    <div class="close">
+        <span class="logo">
+            <a routerLink="/">
+                <img src="/assets/img/logo.png" alt="Logo">
+            </a>
+        </span>
+        <img class="close-btn" src="/assets/img/blue-close.png" alt="" width="40" height="40">
+    </div>
+    <div class="nav">
+        <div>
+            <a [routerLink]='"."' fragment="what-we-do">What we do</a>
+        </div>
+        <div>
+            <a [routerLink]='"."' fragment="services">Our services</a>
+        </div>
+        <div>
+            <a [routerLink]='"."' fragment="why-choose">Why choose Tend?</a>
+        </div>
+        <div>
+            <a [routerLink]='"."' fragment="faq">FAQ</a>
+        </div>
+        <div>
+            <a routerLink="/about-us">About us</a>
+        </div>
+    </div>
+    <div class="btn-wrapper">
+        <button (click)="openDialog()" class="btn-contact" mat-flat-button>Contact Us</button>
+    </div>
+    <div class="phone">
+        <img src="/assets/img/phone.png" height="34" width="34">
+        1800 836 322
+    </div>
+</section>
