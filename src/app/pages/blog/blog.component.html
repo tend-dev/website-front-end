@@ -7,9 +7,7 @@
                 <img src="{{ beUrl }}{{post.image}}" alt="">
     
                 <div class="h3">{{ post.title }}</div>
-                <p>
-                    {{ post.content }}
-                </p>
+                <p [innerHTML]="post.content"></p>
     
                 <div class="created">
                     {{ post.created | date }}
