@@ -11,38 +11,23 @@ export class FaqComponent implements OnInit {
   constructor() {
     this.questions = [
       {
-        question: 'Where is Tend available ?',
-        answer: 'Tend begin services in the South-Eastern suburbs of Metropolitan Melbourne. As we grow our service, coverage will expand to increase our quality service to more areas throughout Melbourne.',
+        question: 'Where is Tend available?',
+        answer: 'We operate in all of Melbourne.',
         isExpanded: true
       },
       {
-        question: 'How can I become a Tend care worker?',
-        answer: 'answer',
+        question: 'Is Tend’s offering a “self-management” service?',
+        answer: 'Tend’s service is full care management service which is different from self-management. Under self management you are responsible for sourcing and scheduling your in-home services. Tend will introduce you to the best in home services, set up those services and provide on-going scheduling.',
         isExpanded: false
       },
       {
-        question: 'How can I book a Tend care worker?',
-        answer: 'answer',
+        question: 'Does Tend also charge for Package Administration?',
+        answer: 'Many providers will break it down into two different costs - package management and care management. But we think it is easier for you if we give you one price for both the care management and administration. So the cost you see in our Pricing Plan is the total cost you will pay.',
         isExpanded: false
       },
       {
-        question: 'How much does this service cost?',
-        answer: 'answer',
-        isExpanded: false
-      },
-      {
-        question: 'Is Tend a government-approved care provider?',
-        answer: 'answer',
-        isExpanded: false
-      },
-      {
-        question: 'How does Tend vet care workers?',
-        answer: 'answer',
-        isExpanded: false
-      },
-      {
-        question: 'Are Tend care workers independent contractors or employees?',
-        answer: 'answer',
+        question: 'Does Tend charge any Basic Daily Fee, Establishment Fee or Exit Fee?',
+        answer: 'No, we do not. The only charge we have is a 10% handling fee for purchases of goods (capped at $100).',
         isExpanded: false
       }
     ];

@@ -70,9 +70,11 @@
     }
     h3 {
         @include h3();
+        margin-right: 50px;
 
         margin-top: 0;
         @include mobile-only {
+            margin-right: unset;
             font-size: 23px;
             line-height: 24px;
             width: 170px;
