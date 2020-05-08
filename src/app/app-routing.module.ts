@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'terms-and-conditions', component: TermsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
