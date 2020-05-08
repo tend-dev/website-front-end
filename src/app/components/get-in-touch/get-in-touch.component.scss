@@ -33,6 +33,24 @@
             text-align: center;
         }
     }
+    .terms {
+        position: relative;
+        top: 220px;
+        left: 480px;
+        width: 440px;
+        text-align: center;
+        a {
+            color: $white;
+        }
+        @include mobile-only {
+            width: 260px;
+            left: unset;
+            top: 116px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 25px;
+        }
+    }
     .sub {
         position: relative;
         top: 140px;
@@ -65,7 +83,7 @@
         @include mobile-only {
             width: 100%;
             left: unset;
-            top: 100px;
+            top: 74px;
             text-align: center;
         }
 
