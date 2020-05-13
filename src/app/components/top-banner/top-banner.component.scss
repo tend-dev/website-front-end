@@ -26,9 +26,9 @@
         font-weight: bold;
         line-height: normal;
         @include mobile-only {
-            width: 240px;
+            width: 200px;
             left: 30px;
-            font-size: 40px;
+            font-size: 32px;
             top: 110px;
         }
     }
@@ -43,7 +43,7 @@
         font-size: 22px;
         line-height: 1.36;
         @include mobile-only {
-            width: 240px;
+            width: 200px;
             left: 30px;
             font-size: 22px;
             top: 70px;
@@ -58,7 +58,7 @@
         @include mobile-only {
             width: 280px;
             left: 30px;
-            top: 90px;
+            top: 106px;
         }
         button {
             font-size: 17px;
