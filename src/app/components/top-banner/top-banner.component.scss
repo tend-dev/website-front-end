@@ -46,7 +46,7 @@
             width: 200px;
             left: 30px;
             font-size: 22px;
-            top: 70px;
+            top: 90px;
         }
     }
     .for-btn {
@@ -58,7 +58,7 @@
         @include mobile-only {
             width: 280px;
             left: 30px;
-            top: 106px;
+            top: 120px;
         }
         button {
             font-size: 17px;
@@ -67,6 +67,9 @@
             background-color: #ee8e64;
             border-radius: 30px;
             padding: 12px 40px;
+            @include mobile-only {
+                padding: 12px 32px;
+            }
 
             img {
                 padding-left: 20px;
