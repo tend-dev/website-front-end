@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiURL: 'http://159.65.47.27/api/',
-  beURL: 'http://159.65.47.27'
+  apiURL: 'https://www.tend.care:446/api/',
+  beURL: 'https://www.tend.care:446'
 };
