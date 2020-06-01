@@ -3,7 +3,7 @@
 @import 'assets/styles/mixins';
 
 html, body { height: 100%; }
-body { margin: 0; 
+body { margin: 0;
     font-family: 'Calibre-Regular';
     letter-spacing: 0;
     width: 1400px;
@@ -29,4 +29,11 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
     background: $white;
     color: $color_text;
     border-radius: 20px !important;
+}
+
+button  {
+  transition: all .3s;
+  &:hover {
+    background-color:  #2EA8D0 !important;
+  }
 }
