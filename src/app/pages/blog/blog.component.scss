@@ -2,75 +2,18 @@
 @import '../../../assets/styles/mixins';
 
 .blog {
-    margin: 0 285px 40px 285px;
-    @include mobile-only {
-        font-size: 45px;
-        margin: 0 30px 20px 30px;
-    }
+  margin: 0 285px 40px 285px;
+  @include mobile-only {
+    font-size: 45px;
+    margin: 0 30px 20px 30px;
+  }
+}
 
-    .h4 {
-        margin-top: 50px;
-
-        @include h4();
-
-        @include mobile-only {
-            font-size: 45px;
-            margin: 40px 0 20px 0;
-        }
-    }
-
-    p {
-        font-family: 'Calibre-Regular';
-
-        @include sub();
-        @include mobile-only {
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
-    img {
-        width: 370px;
-        height: 200px;
-        @include mobile-only {
-            width: 261px;
-            height: 141px;
-        }
-    }
-
-    .h3 {
-        @include h3();
-
-        color: $dark_gray;
-        padding: 30px 0;
-        @include mobile-only {
-            font-size: 23px;
-            padding: 10px 0;
-        }
-    }
-    .created {
-        @include sub();
-
-        color: $orange;
-        @include mobile-only {
-            font-size: 15px;
-            line-height: 25px;
-        }
-    }
-
-    .wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 90px;
-        grid-auto-rows: auto;
-
-        margin-top: 40px;
-        margin-bottom: 40px;
-
-        @include mobile-only {
-            grid-template-columns: repeat(1, 1fr);
-            grid-gap: 40px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    }
+.h4 {
+  margin: 50px 0 50px;
+  @include h4();
+  @include mobile-only {
+    font-size: 45px;
+    margin: 40px 0 20px 0;
+  }
 }
