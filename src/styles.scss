@@ -35,6 +35,6 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
   z-index: 2;
   transition: all .3s;
   &:hover {
-    background-color:  #2EA8D0 !important;
+    background-color: $primary_hover !important;
   }
 }
