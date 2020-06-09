@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
-import { BlogComponent } from './pages/blog/blog.component';
 import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
@@ -18,9 +18,8 @@ import { WhyChooseComponent } from './components/why-choose/why-choose.component
 import { CommonCasesComponent } from './components/common-cases/common-cases.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { AboutBlockComponent } from './components/about-block/about-block.component';
-import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
-import { FormsModule } from '@angular/forms';
+import { GetInTouchModule } from './components/get-in-touch/get-in-touch.module';
 
 import { MatButtonModule } from '@angular/material/button';
 import { BlogAreaComponent } from './components/blog-area/blog-area.component';
@@ -32,14 +31,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-snack-bar.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { TermsComponent } from './pages/terms/terms.component';
-import { BlogListComponent } from './components/blog-list/blog-list.component';
-import { BlogElementComponent } from './components/blog-list/blog-element/blog-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BlogComponent,
     AboutComponent,
     NotFoundComponent,
     TopMenuComponent,
@@ -51,14 +47,11 @@ import { BlogElementComponent } from './components/blog-list/blog-element/blog-e
     CommonCasesComponent,
     FaqComponent,
     AboutBlockComponent,
-    GetInTouchComponent,
     ContactFormComponent,
     BlogAreaComponent,
     CustomSnackBarComponent,
     MobileMenuComponent,
-    TermsComponent,
-    BlogListComponent,
-    BlogElementComponent
+    TermsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +59,8 @@ import { BlogElementComponent } from './components/blog-list/blog-element/blog-e
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+
+    GetInTouchModule,
 
     MatButtonModule,
     MatTabsModule,
