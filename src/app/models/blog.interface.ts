@@ -5,4 +5,5 @@ export interface Blog {
   created: number;
   author: string;
   image: string;
+  thumbnail: string;
 }

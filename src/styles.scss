@@ -44,9 +44,17 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
   font-size: 17px;
   line-height: 1.47;
   color: $color_text;
+  @include desktop-only {
+    font-size: 23px;
+    line-height: 1.3;
+  }
 
   img {
     max-width: 100%;
+    border-radius: 18px;
+    @include desktop-only {
+      border-radius: 30px;
+    }
   }
 
   h2 {
@@ -55,6 +63,10 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
     font-size: 23px;
     line-height: 1.3;
     color: $color_h;
+    @include desktop-only {
+      font-size: 33px;
+      line-height: 1.1;
+    }
   }
 
   a {
@@ -65,6 +77,9 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
   ul {
     padding-inline-start: 15px;
     line-height: 1.47;
+    @include desktop-only {
+      line-height: 1.3;
+    }
     li {
       margin: 1.4em 0;
     }
