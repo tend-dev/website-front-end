@@ -8,6 +8,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 import { BlogListModule } from '@components/blog-list/blog-list.module';
 import { BackButtonModule } from '@components/back-button/back-button.module';
+import { ShareButtonsModule } from '@components/share-buttons/share-buttons.module';
 import { GetInTouchModule } from '@components/get-in-touch/get-in-touch.module';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { GetInTouchModule } from '@components/get-in-touch/get-in-touch.module';
     BlogRoutingModule,
     BlogListModule,
     BackButtonModule,
+    ShareButtonsModule,
     GetInTouchModule,
   ],
   providers: []

@@ -1,0 +1,23 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+:host {
+  display: flex;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 5px;
+  background-color: $orange;
+  border-radius: 50%;
+  @include desktop-only {
+    margin-right: 15px;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
