@@ -13,6 +13,10 @@ header {
   }
 }
 
+app-back-button {
+  width: 0;
+}
+
 .title {
   @include desktop-only {
     max-width: 770px;
@@ -76,6 +80,9 @@ hr {
   color: $hr_color;
   background-color: $hr_color;
   height: 1px;
+  @include desktop-only {
+    margin: 60px 0 56px;
+  }
 }
 
 // * FOOTER
@@ -84,6 +91,9 @@ hr {
   display: flex;
   margin-bottom: 40px;
   align-items: center;
+  @include desktop-only {
+    margin-bottom: 150px;
+  }
 
   .blog-date {
     margin-right: 20px;
