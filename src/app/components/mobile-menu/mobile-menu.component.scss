@@ -20,6 +20,18 @@
     }
     .close {
         text-align: left;
+        & *:focus {
+          outline: none;
+        }
+        .logo {
+          a {
+            display: inline-block;
+            max-width: 100px;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
     }
     .close-btn {
         float: right;
@@ -44,7 +56,7 @@
     .btn-wrapper {
         padding: 14px 0;
     }
-    
+
     .phone {
         padding: 14px 0;
         font-size: 24px;

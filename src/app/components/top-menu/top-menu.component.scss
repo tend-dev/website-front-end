@@ -16,6 +16,17 @@
         cursor: pointer;
         float: right;
     }
+
+    .logo {
+      a {
+        display: inline-block;
+        max-width: 100px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
 }
 
 .top-nav {
@@ -40,6 +51,13 @@
         display:inline-block;
         margin-left: 45px;
         vertical-align: middle;
+        a {
+          display: block;
+          max-width: 120px;
+          img {
+            max-width: 100%;
+          }
+        }
     }
 
     .nav {
