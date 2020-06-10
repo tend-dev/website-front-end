@@ -1,5 +1,20 @@
 @import '../../../assets/styles/variables';
 
-.primary-button {
-  background-color: $primary;
+.back-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+svg {
+  circle {
+    fill: $primary;
+    transition: all 0.3s ease;
+  }
+
+  &:hover{
+    circle {
+      fill: $primary_hover;
+    }
+  }
 }
