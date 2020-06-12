@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.back-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+svg {
+  circle {
+    fill: $primary;
+    transition: all 0.3s ease;
+  }
+
+  &:hover{
+    circle {
+      fill: $primary_hover;
+    }
+  }
+}

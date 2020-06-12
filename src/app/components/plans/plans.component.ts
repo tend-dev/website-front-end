@@ -5,45 +5,47 @@ import { IPlanDescription } from './plan-description.interface';
 
 const PLANS: IPlan[] = [
   {
-    header: 'On Tap',
+    header: 'Premium',
     label: 'Best Value',
     points: [
       {
-        text: '1.5 hours',
+        text: '1h 30min',
       },
       {
-        text: 'unlimited',
+        text: 'Unlimited',
       },
       {
-        text: '3 months upon request assessed need',
+        text: 'Every 3 months',
+        clarification: 'Plus As Needed',
       },
       {
-        text: '3 months upon request assessed need',
+        text: 'Every 6 months',
+        clarification: 'Plus As Needed',
       },
       {
-        text: '1.5 hours',
+        text: '1 Hour',
       },
     ],
     percents: 24,
   },
   {
-    header: 'Let’s Get Started',
+    header: 'Basic',
     points: [
       {
-        text: '1 hour',
+        text: '1h 30min',
       },
       {
-        text: 'set up and review additional costs',
-        clarification: '(additinal referrals charged 1.0% fee per transaction)',
+        text: 'Initial Set-up and Review',
+        clarification: '(additinal referrals charged per 15min)',
       },
       {
-        text: '6 months',
+        text: 'Every 6 months',
       },
       {
-        text: 'annual review only',
+        text: 'Annual Review',
       },
       {
-        text: '1 hour',
+        text: '1 Hour',
       },
     ],
     percents: 19,

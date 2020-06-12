@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <g id="320" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_Blog_Detail_320" transform="translate(-267.000000, -2837.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Share" transform="translate(139.000000, 2827.000000)">
+                <g id="linkedin" transform="translate(128.000000, 10.000000)">
+                    <path d="M11.997,12 L11.997,11.9995 L12,11.9995 L12,7.5985 C12,5.4455 11.5365,3.787 9.0195,3.787 C7.8095,3.787 6.9975,4.451 6.666,5.0805 L6.631,5.0805 L6.631,3.988 L4.2445,3.988 L4.2445,11.9995 L6.7295,11.9995 L6.7295,8.0325 C6.7295,6.988 6.9275,5.978 8.221,5.978 C9.4955,5.978 9.5145,7.17 9.5145,8.0995 L9.5145,12 L11.997,12 Z" id="Path"></path>
+                    <polygon id="Path" points="0.198 3.9885 2.686 3.9885 2.686 12 0.198 12"></polygon>
+                    <path d="M1.441,0 C0.6455,0 0,0.6455 0,1.441 C0,2.2365 0.6455,2.8955 1.441,2.8955 C2.2365,2.8955 2.882,2.2365 2.882,1.441 C2.8815,0.6455 2.236,0 1.441,0 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

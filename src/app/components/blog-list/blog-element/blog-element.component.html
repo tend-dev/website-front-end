@@ -1,5 +1,5 @@
-<a routerLink="/" class="blog-element">
-  <img [src]="blog.image" class="blog-image" [alt]="blog.title + ' image'">
+<a [routerLink]="['/blog', blog.id]" class="blog-element">
+  <img [src]="blog.thumbnail" class="blog-image" [alt]="blog.title + ' image'">
   <div class="blog-title">{{ blog.title }}</div>
   <div class="blog-date">{{ blog.created | date:'longDate' }}</div>
 </a>

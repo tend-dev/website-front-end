@@ -5,11 +5,11 @@ import { BlogsService } from '@services/blogs.service';
 import { Blog } from '@models/blog.interface';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  selector: 'app-blogs',
+  templateUrl: './blogs.component.html',
+  styleUrls: ['./blogs.component.scss']
 })
-export class BlogComponent implements OnInit {
+export class BlogsComponent implements OnInit {
   public blogs$: Observable<Blog[]> = this.blogsService.blogs$;
 
   constructor(
@@ -17,6 +17,6 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.blogsService.getPosts();
+    this.blogsService.getBlogs();
   }
 }
