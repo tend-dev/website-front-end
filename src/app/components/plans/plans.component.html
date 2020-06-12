@@ -1,98 +1,86 @@
 <section class="plans">
 
-    <div class="h4">Our Pricing</div>
-    <h4>
-        Home care costs matter.
-    </h4>
-    <div class="sub">
-        Pay too much and you are losing valuable money that you will need for your home care services and your goods. Our pricing is simple and transparent - we make it easy to understand what you get for your money. 
-        <br>
-        No surprises. No hidden costs.
+  <div class="plans-header">
+    <h4>Our Pricing</h4>
+    <div class="section-subheader">
+      Home care costs matter.
     </div>
+    <div class="header-content">
+      Pay too much and you are losing valuable money that you will need for your home care services and your goods. Our pricing is simple and transparent - we make it easy to understand what you get for your money.
+      <br>
+      No surprises. No hidden costs.
+    </div>
+  </div>
 
+  <div class="plans-wrapper">
 
-    <div class="basic">
-        <div class="wrapper">
-            <div class="one card-plan plan-price">
-                <h3>Basic Plan</h3>
-                <div class="sub-plan">
-                    What you get:
-                </div>
-
-                <div class="points">
-                    <div class="point">
-                        In-home Consultation and Set up
-                    </div>
-                    <div class="point">
-                        Dedicated Care Manager
-                    </div>
-                    <div class="point">
-                        Care Plan and Budget Development
-                    </div>
-                    <div class="point">
-                        Ongoing Scheduling of Your Services
-                    </div>
-                    <div class="point">
-                        Annual In-home Review
-                    </div>
-                    <div class="point">
-                        Additional Extra Care Management Charged on Hourly Basis
-                    </div>
-                </div>
-
-                <div class="percent">
-                    19<span>%</span>
-                </div>
-
-                <div class="for-btn">
-                    <button (click)="openDialog()" class="btn-contact" mat-flat-button>Choose this plan</button>
-                </div>
-            </div>
-
-            <div class="two card-plan plan-price">
-                <h3>On Tap Plan</h3>
-                <div class="sub-plan">
-                    What you get:
-                </div>
-
-                <div class="points">
-                    <div class="point">
-                        In-home Consultation and Set up
-                    </div>
-                    <div class="point">
-                        Dedicated Care Manager
-                    </div>
-                    <div class="point">
-                        Care Plan and Budget Development
-                    </div>
-                    <div class="point">
-                        Ongoing scheduling of your services
-                    </div>
-                    <div class="point">
-                        Annual In-home Review
-                    </div>
-                    <div class="point">
-                        Full Access to Case Manager
-                    </div>
-                </div>
-
-                <div class="percent">
-                    24<span>%</span>
-                </div>
-
-
-                <div class="for-btn">
-                    <button (click)="openDialog()" class="btn-contact" mat-flat-button>Choose this plan</button>
-                </div>
-                
-            </div>
+    <!-- ! DESKTOP ONLY -->
+    <div class="card-header desktop-only desktop-top-right-corner">
+      <div class="description">
+        Activities
+      </div>
+      <span class="card-header-devider"></span>
+    </div>
+    <ng-container *ngFor="let description of descriptions">
+      <div class="point-description card-point desktop-only">
+        <div class="point-description-title">
+          {{ description?.title }}
         </div>
-    </div>
+        <div *ngIf="description?.content" class="point-description-content">
+          {{ description?.content }}
+        </div>
+      </div>
+    </ng-container>
+    <div class="card-point desktop-only"></div>
+    <div class="for-btn desktop-only desktop-bottom-right-corner"></div>
+    <!-- ! DESKTOP ONLY: END -->
 
+    <ng-container *ngFor="let plan of plans; index as planIndex">
+      <div class="card-header desktop-top-left-corner" [ngClass]="{'hide-side-border desktop-top-right-corner shadowed-desktop': planIndex === 0}">
+        <div class="description mobile-only">
+          Activities
+        </div>
+        <h3>
+          {{ plan.header }}
+          <span *ngIf="plan.label" class="card-header-label">
+            {{ plan.label }}
+          </span>
+        </h3>
+        <span class="card-header-devider"></span>
+      </div>
+
+      <div class="card-point" *ngFor="let point of plan.points; index as i" [ngClass]="{'hide-side-border shadowed-desktop': planIndex === 0}">
+        <div class="point-description mobile-only">
+          <div class="point-description-title">
+            {{ descriptions[i]?.title }}
+          </div>
+          <div *ngIf="descriptions[i]?.content" class="point-description-content">
+            {{ descriptions[i]?.content }}
+          </div>
+        </div>
+        <div class="card-point-content">
+          {{ point.text }}
+          <p class="card-point-content-clarification" *ngIf="point.clarification">
+            {{ point.clarification }}
+          </p>
+        </div>
+      </div>
+
+      <div class="percentage" [ngClass]="{'hide-side-border shadowed-desktop': planIndex === 0}">
+        {{plan.percents}}
+        <span>%</span>
+      </div>
+
+      <div class="for-btn desktop-bottom-left-corner" [ngClass]="{'hide-side-border desktop-bottom-right-corner shadowed-desktop': planIndex === 0}">
+        <button (click)="openDialog()" class="btn-contact blue-hover" mat-flat-button>Choose this Plan</button>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="plans-footer">
     <img src="/assets/img/plan-shield.svg">
-    <div class="card-plan">
-        <div class="plan-footer">
-            Tend’s On Tap Plan is an on demand Care Management service without the extra charges. It gives you the assurance that you will have friendly professional advice from someone who knows you.
-        </div>
+    <div class="footer-content">
+      Enjoy the Tend experience knowing that your packaged funds go further. Our simple cost structure and no fees is our way of ensuring your money is spent where you need it to be. No fees means more direct support hours available to you. This is our guiding principle, to maximise our direct service offering to you and other elders in our community.
     </div>
+  </div>
 </section>
