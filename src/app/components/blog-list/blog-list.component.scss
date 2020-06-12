@@ -1,0 +1,12 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+
+.blogs-wrapper {
+  display: block;
+  margin-bottom: 60px;
+  @include desktop-only {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 90px;
+  }
+}

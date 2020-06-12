@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { ContactService } from '@services/contact.service';
-import { environment } from '@env/environment';
+import { BlogsService } from '@services/blogs.service';
+import { Blog } from '@models/blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -9,17 +10,13 @@ import { environment } from '@env/environment';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  posts: any[];
-  beUrl = '';
+  public blogs$: Observable<Blog[]> = this.blogsService.blogs$;
 
-  constructor(private contactService: ContactService) {
-    this.beUrl = environment.beURL;
-  }
+  constructor(
+    private blogsService: BlogsService
+  ) { }
 
   ngOnInit(): void {
-    this.contactService.getPosts()
-    .subscribe((posts: any[]) => {
-      this.posts = posts;
-    });
+    this.blogsService.getPosts();
   }
 }
