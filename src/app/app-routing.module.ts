@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'about-us', component: AboutComponent },
   {
     path: 'blog',
-    loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
+    redirectTo: 'home',
+    // loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
   },
   { path: 'terms-and-conditions', component: TermsComponent },
   { path: '**', component: NotFoundComponent }
