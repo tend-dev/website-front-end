@@ -1,16 +1,16 @@
 <section class="faq-bg" id="faq">
     <div class="blog">
-        <div class="h4">FAQ</div>
+        <h2 class="h4">FAQ</h2>
         <div class="sub">Frequenlty asked questions</div>
 
         <div class="gray-wrapper">
             <div class="question" [ngClass]="{expanded: question.isExpanded}" *ngFor="let question of questions">
-                <span (click)="toggleExpand(question)" class="minus">
+                <span (click)="toggleExpand(question)" class="toggler">
                     <img *ngIf="!question.isExpanded" src="/assets/img/faq/faq-plus.svg" alt="Toggle">
-                    <img *ngIf="question.isExpanded" src="/assets/img/faq/faq-minus.png" alt="Toggle">
+                    <span *ngIf="question.isExpanded" class="minus">-</span>
                 </span>
                 <h3>{{ question.question }}</h3>
-                <div class="answer" *ngIf="question.isExpanded">
+                <div class="answer" [ngClass]="{'opened': question.isExpanded}">
                     {{ question.answer }}
                 </div>
             </div>
