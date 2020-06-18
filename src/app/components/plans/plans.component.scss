@@ -60,7 +60,7 @@ h4 {
   @include desktop-only {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(8, auto);
+    grid-template-rows: repeat(9, auto);
     grid-template-columns: repeat(3, 1fr);
   }
 }
