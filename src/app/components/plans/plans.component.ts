@@ -25,6 +25,9 @@ const PLANS: IPlan[] = [
       {
         text: '1 Hour',
       },
+      {
+        text: 'Unlimited 24/7',
+      },
     ],
     percents: 24,
   },
@@ -46,6 +49,9 @@ const PLANS: IPlan[] = [
       },
       {
         text: '1 Hour',
+      },
+      {
+        text: 'Unlimited 24/7',
       },
     ],
     percents: 19,
@@ -70,6 +76,9 @@ const DESCRIPTIONS: IPlanDescription[] = [
   {
     title: 'Annual Review',
     content: 'Face to face in-home program review with Care Manager',
+  },
+  {
+    title: 'Direct Care Scheduling',
   }
 ]
 
