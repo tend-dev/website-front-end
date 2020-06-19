@@ -22,9 +22,21 @@ body {
 .tend-container {
   width: 100%;
   max-width: map-get($breakpoints-desktop, "max");
+  margin: 0 auto;
 
   &.wide {
     max-width: unset;
+  }
+}
+
+.tend-content-container {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @include tablet-min-portrait {
+    padding: 0;
   }
 }
 

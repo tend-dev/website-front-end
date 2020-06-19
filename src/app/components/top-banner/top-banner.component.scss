@@ -28,17 +28,11 @@
 
 .banner-content {
   padding-top: 85px;
-  padding-left: 30px;
   transition: all .15s ease-in-out;
 
   @include tablet-min {
     padding-top: 116px;
   }
-
-  @include tablet-min-portrait {
-    padding-left: 120px;
-  }
-
 }
 
 .header-wrapper {
