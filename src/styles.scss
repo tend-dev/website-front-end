@@ -19,6 +19,14 @@ body {
 @import '~@angular/material/theming';
 @include mat-core();
 
+.tend-container {
+  width: 100%;
+  max-width: map-get($breakpoints-desktop, "max");
+
+  &.wide {
+    max-width: unset;
+  }
+}
 
 .white-snackbar {
   background: $white;
