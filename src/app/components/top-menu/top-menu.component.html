@@ -1,32 +1,27 @@
-<div class="top-nav-mobile">
-    <span class="logo">
-        <a routerLink="/">
-            <img src="/assets/img/logo.jpg" alt="Logo">
-        </a>
-    </span>
-    <a (click)="openModalMenu()" class="m-menu">
-        <img src="/assets/img/humburger.png" alt="Menu" width="38" height="34">
+<div class="top-navigation">
+  <span class="logo">
+    <a routerLink="/">
+      <img src="/assets/img/logo.jpg" alt="Logo">
     </a>
-</div>
+  </span>
 
-<div class="top-nav">
-    <span class="logo">
-        <a routerLink="/">
-            <img src="/assets/img/logo.jpg" alt="Logo">
-        </a>
-    </span>
-    <span class="nav">
-        <a [routerLink]='"."' fragment="what-we-do">What we do</a>
-        <a [routerLink]='"."' fragment="services">Our services</a>
-        <a [routerLink]='"."' fragment="why-choose">Why choose Tend?</a>
-        <a [routerLink]='"."' fragment="faq">FAQ</a>
-        <a routerLink="/about-us">About us</a>
-    </span>
-    <span class="phone">
-        <img src="/assets/img/phone.png" height="34" width="34">
-        1800 836 322
-    </span>
-    <span>
-        <button (click)="openDialog()" class="btn-contact blue-hover" mat-flat-button>Contact Us</button>
-    </span>
+  <span class="nav">
+    <a *ngFor="let menuLink of menuLinks$ | async"
+      [routerLink]="menuLink.href"
+      [fragment]="menuLink.fragment"
+    >{{ menuLink.anchor }}</a>
+  </span>
+
+  <div class="phone-wrapper">
+    <img src="/assets/img/phone.png" height="34" width="34" />
+    <span class="phone">1800 836 322</span>
+  </div>
+
+  <span>
+    <button (click)="openDialog()" class="btn-contact blue-hover" mat-flat-button>Contact Us</button>
+  </span>
+
+  <a (click)="openModalMenu()" class="m-menu">
+    <img src="/assets/img/humburger.png" alt="Menu" width="38" height="34">
+  </a>
 </div>

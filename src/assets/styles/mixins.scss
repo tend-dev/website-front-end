@@ -51,16 +51,59 @@ $breakpoints-mobile: (
 $breakpoints-tablet: (
   min: 601px,
   max-portrait: 900px,
+  min-portrait: 901px,
   max-landscape: 1200px,
+  min-landscape: 1201px,
   max: 1200px
 );
 
-// Mobile phone rules
+$breakpoints-desktop: (
+  min: 1201px,
+  max: 1400px
+);
+
+// * Mobile phone rules width < 600px
 @mixin mobile-only {
   @media (max-width: map-get($breakpoints-mobile, "max") ) {
     @content;
   }
 }
+
+// * Tablet rules width > 601px
+@mixin tablet-min {
+  @media (min-width: map-get($breakpoints-tablet, "min") ) {
+    @content;
+  }
+}
+
+// * Tablet rules width < 900px
+@mixin tablet-max-portrait {
+  @media (max-width: map-get($breakpoints-tablet, "max-portrait") ) {
+    @content;
+  }
+}
+
+// * Tablet rules width > 1201px
+@mixin tablet-min-landscape {
+  @media (min-width: map-get($breakpoints-tablet, "min-landscape") ) {
+    @content;
+  }
+}
+
+// * Tablet rules width < 1200px
+@mixin tablet-max-landscape {
+  @media (max-width: map-get($breakpoints-tablet, "max-landscape") ) {
+    @content;
+  }
+}
+
+// * Tablet rules width > 1201px
+@mixin desktop-min {
+  @media (min-width: map-get($breakpoints-desktop, "min") ) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: map-get($breakpoints-mobile, "min")) {
     @content;
