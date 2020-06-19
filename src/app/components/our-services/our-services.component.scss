@@ -2,83 +2,51 @@
 @import '../../../assets/styles/mixins';
 
 .services {
-    margin: 0 215px;
-    @include mobile-only {
-        margin: 0;
-    }
+  margin-bottom: 20px;
 
-    .h4 {
-        margin-top: 197px;
-        text-align: center;
+  @include tablet-min-portrait {
+    margin-bottom: 100px;
+  }
+}
 
-        @include h4();
-        @include mobile-only {
-            margin: 0 30px;
-            margin-top: 40px;
-            font-size: 45px;
-        }
-    }
+h2 {
+  @include h2();
+  text-align: center;
 
-    .sub {
-        width: 498px;
-        margin-top: 16px;
+  @include tablet-min-portrait {
+    @include h2-desktop();
+  }
+}
 
-        @include sub();
+.sub {
+  @include sub();
+  max-width: 498px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
 
-        margin-bottom: 40px;
-        @include mobile-only {
-            width: unset;
-            margin: 0 30px;
-            margin-bottom: 40px;
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
+  @include tablet-min-portrait {
+    @include sub-desktop();
+  }
+}
 
-    .s-list {
-        margin-bottom: 100px;
-        @include mobile-only {
-            margin-bottom: 20px;
-        }
-    }
-    h4 {
-        @include sub();
+img {
+  height: 46px;
+}
 
-        color: $color_h;
-        font-family: 'Calibre-Bold';
-        font-weight: bold;
+h3 {
+  @include h3();
+  margin: 1.5em 0 0;
 
-        @include mobile-only {
-            margin: 30px 30px 0 30px;
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
-    p {
-        font-family: 'Calibre-Regular';
+  @include tablet-min-portrait {
+    @include h3-desktop();
+  }
+}
 
-        @include sub();
-        @include mobile-only {
-            margin: 0 30px;
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
+p {
+  @include sub();
 
-    ::ng-deep .mat-tab-label {
-        padding: 0 20px;
-        min-width: 100px;
-    }
-
-    img {
-        height: 46px;
-    }
-
-    ::ng-deep .mat-tab-header {
-        border-bottom: 0;
-    }
-
-    ::ng-deep .mat-ink-bar {
-        background-color: $orange;
-    }
+  @include tablet-min-portrait {
+    @include sub-desktop();
+  }
 }

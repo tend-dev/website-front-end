@@ -124,3 +124,23 @@ body {
     height: 1px;
   }
 }
+
+
+// * <app-our-services>
+
+.services {
+  .mat-tab-label {
+    padding: 0 20px;
+    min-width: 100px;
+  }
+
+  .mat-tab-header {
+    border-bottom: 0 !important;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .mat-ink-bar {
+    background-color: $orange !important;
+  }
+}
