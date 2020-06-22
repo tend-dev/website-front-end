@@ -2,36 +2,25 @@
 @import '../../../assets/styles/variables';
 
 .plans {
-  margin: 0 215px;
-  @include mobile-only {
-    margin: 0 30px 40px;
-  }
+  margin-bottom: 40px;
 }
 
-h4 {
-  margin-top: 50px;
+h2 {
+  @include h2();
   margin-bottom: 10px;
-  @include h4();
-  @include mobile-only {
-    font-size: 45px;
+
+  @include tablet-min-portrait {
+    @include h2-desktop();
   }
 }
 
 .section-subheader {
+  @include h3();
   margin-bottom: 5px;
-  font-family: "Calibre-Bold";
-  font-size: 17px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.47;
-  letter-spacing: normal;
-  text-align: center;
   color: $color_text;
-  @include desktop-only {
-    margin-bottom: 10px;
-    font-size: 23px;
-    line-height: 1.3;
+
+  @include tablet-min-portrait {
+    @include h3-desktop();
   }
 }
 
@@ -40,7 +29,7 @@ h4 {
   font-size: 17px;
   line-height: 1.47;
   color: $color_text;
-  @include desktop-only {
+  @include tablet-min-portrait {
     font-size: 23px;
     line-height: 1.3;
     max-width: 770px;
@@ -51,13 +40,13 @@ h4 {
 .plans-header {
   text-align: center;
   margin-bottom: 30px;
-  @include desktop-only {
+  @include tablet-min-portrait {
     margin-bottom: 40px;
   }
 }
 
 .plans-wrapper {
-  @include desktop-only {
+  @include tablet-min-portrait {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(9, auto);
@@ -66,13 +55,13 @@ h4 {
 }
 
 .desktop-only {
-  @include mobile-only {
+  @include tablet-max-portrait {
     display: none;
   }
 }
 
 .mobile-only {
-  @include desktop-only {
+  @include tablet-min-portrait {
     display: none;
   }
 }
@@ -90,7 +79,7 @@ h4 {
   border: 1px solid $border_light;
   border-bottom: none;
   border-radius: 30px 30px 0 0;
-  @include desktop-only {
+  @include tablet-min-portrait {
     padding: 30px 30px 45px;
   }
 
@@ -108,7 +97,7 @@ h4 {
     font-size: 17px;
     line-height: 1.47;
     color: $color_text;
-    @include desktop-only {
+    @include tablet-min-portrait {
       font-size: 23px;
       line-height: 1.3;
     }
@@ -117,12 +106,11 @@ h4 {
 
 h3 {
   @include h3();
-  margin: 0;
+  font-size: 23px;
   display: flex;
   align-items: center;
-  @include mobile-only {
-    font-size: 23px;
-    line-height: 30px;
+  @include tablet-min-portrait {
+    font-size: 33px;
   }
 }
 
@@ -154,7 +142,7 @@ h3 {
   font-size: 17px;
   line-height: 1.47;
   color: $color_text;
-  @include desktop-only {
+  @include tablet-min-portrait {
     font-size: 23px;
     line-height: 1.3;
   }
@@ -171,7 +159,7 @@ h3 {
   font-size: 15px;
   line-height: 1.33;
   color: $color_text;
-  @include desktop-only {
+  @include tablet-min-portrait {
     font-size: 17px;
     line-height: 1.2;
   }
@@ -217,7 +205,7 @@ h3 {
   color: $dark_gray;
   border-left: solid 1px $border_light;
   border-right: solid 1px $border_light;
-  @include desktop-only {
+  @include tablet-min-portrait {
     padding-bottom: 20px;
   }
 
@@ -258,7 +246,7 @@ button {
   font-size: 17px;
   line-height: 1.47;
   color: $color_text;
-  @include desktop-only {
+  @include tablet-min-portrait {
     font-size: 23px;
     line-height: 1.3;
   }
@@ -271,7 +259,7 @@ button {
   }
 
   .footer-content {
-    @include desktop-only {
+    @include tablet-min-portrait {
       max-width: 770px;
       margin: 0 auto;
     }
@@ -279,38 +267,38 @@ button {
 }
 
 .desktop-top-left-corner {
-  @include desktop-only {
+  @include tablet-min-portrait {
     border-top-left-radius: initial;
   }
 }
 
 .desktop-top-right-corner {
-  @include desktop-only {
+  @include tablet-min-portrait {
     border-top-right-radius: initial;
   }
 }
 
 .desktop-bottom-left-corner {
-  @include desktop-only {
+  @include tablet-min-portrait {
     border-bottom-left-radius: initial;
   }
 }
 
 .desktop-bottom-right-corner {
-  @include desktop-only {
+  @include tablet-min-portrait {
     border-bottom-right-radius: initial;
   }
 }
 
 .hide-side-border {
-  @include desktop-only {
+  @include tablet-min-portrait {
     border-left: none;
     border-right: none;
   }
 }
 
 .shadowed-desktop {
-  @include desktop-only {
+  @include tablet-min-portrait {
     position: relative;
 
     &:before {
