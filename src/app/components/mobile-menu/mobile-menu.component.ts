@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { MenuLink } from '@models/menu-link.interface';
   templateUrl: './mobile-menu.component.html',
   styleUrls: ['./mobile-menu.component.scss']
 })
-export class MobileMenuComponent implements OnDestroy {
+export class MobileMenuComponent {
   menuLinks$: Observable<MenuLink[]> = this.menuLinksService.links$;
   private routePath: string[];
   private fragment: string;
@@ -25,11 +25,7 @@ export class MobileMenuComponent implements OnDestroy {
     private menuLinksService: MenuLinksService,
     private router: Router
   ) {
-    this.subscribeToClose()
-  }
-
-  ngOnDestroy() {
-    this.linkSub.unsubscribe();
+    this.subscribeToClose();
   }
 
   subscribeToClose() {
@@ -37,6 +33,7 @@ export class MobileMenuComponent implements OnDestroy {
       this.router.navigate(this.routePath, { fragment: this.fragment });
       this.routePath = null;
       this.fragment = null;
+      this.linkSub.unsubscribe();
     })
   }
 
