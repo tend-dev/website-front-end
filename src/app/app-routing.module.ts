@@ -3,7 +3,6 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AboutComponent } from './pages/about/about.component';
 import { TermsComponent } from './pages/terms/terms.component';
 
 const routerOptions: ExtraOptions = {
@@ -14,7 +13,10 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'about-us', component: AboutComponent },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
+  },
   {
     path: 'blog',
     redirectTo: 'home',

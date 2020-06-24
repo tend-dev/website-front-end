@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { TopBannerComponent } from './components/top-banner/top-banner.component';
@@ -36,7 +35,6 @@ import { TermsComponent } from './pages/terms/terms.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     NotFoundComponent,
     TopMenuComponent,
     TopBannerComponent,
