@@ -2,98 +2,71 @@
 @import '../../../assets/styles/mixins';
 
 .footer {
-    height: 442px;
-    width: 1400px;
-    display: inline-block;
-    background-image: url('/assets/img/footer.png');
-    background-position: center;
+  min-height: 320px;
+  padding-top: 20px;
+  background-image: url('/assets/img/footer/footer-bg.jpg');
+  background-position: center;
+  background-size: cover;
 
-    @include mobile-only {
-        width: 100%;
-        height: 326px;
-    }
+  @include tablet-min-portrait {
+    min-height: 442px;
+    padding-top: 80px;
+  }
 
-    .h4 {
-        width: 340px;
-        height: 60px;
-        position: relative;
-        top: 117px;
-        left: 551px;
+  @include desktop-wide-min {
+    background-image: url('/assets/img/footer/footer-bg@2x.jpg');
+  }
 
-        color: $white;
-        font-family: 'Calibre-Bold';
-        font-size: 60px;
-        font-weight: bold;
+  @include desktop-wide-min-2k {
+    background-image: url('/assets/img/footer/footer-bg@3x.jpg');
+  }
+}
 
-        @include mobile-only {
-            width: 100%;
-            left: unset;
-            top: 60px;
-            font-size: 45px;
-            text-align: center;
-        }
-    }
-    .terms {
-        position: relative;
-        top: 220px;
-        left: 480px;
-        width: 440px;
-        text-align: center;
-        a {
-            color: $white;
-        }
-        @include mobile-only {
-            width: 260px;
-            left: unset;
-            top: 116px;
-            margin: 0 auto;
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
-    .sub {
-        position: relative;
-        top: 140px;
-        left: 496px;
-        width: 440px;
-        height: 60px;
+h2 {
+  @include h2();
+  text-align: center;
+  color: $white;
 
-        color: $white;
-        font-family: 'Calibre-Regular';
-        line-height: 30px;
-        font-size: 23px;
-        text-align: center;
+  @include tablet-min-portrait {
+    @include h2-desktop();
+  }
+}
 
-        @include mobile-only {
-            width: 260px;
-            left: unset;
-            top: 60px;
-            margin: 0 auto;
-            font-size: 17px;
-            line-height: 25px;
-        }
-    }
-    .for-btn {
-        position: relative;
-        top: 170px;
-        left: 615px;
-        width: 463px;
-        height: 40px;
+.sub {
+  @include sub();
+  max-width: 440px;
+  margin: 0 auto 20px;
+  text-align: center;
+  color: $white;
 
-        @include mobile-only {
-            width: 100%;
-            left: unset;
-            top: 74px;
-            text-align: center;
-        }
+  @include tablet-min-portrait {
+    @include sub-desktop();
+    margin-bottom: 30px;
+  }
+}
 
-        button {
-            font-size: 15px;
-            font-weight: bold;
-            color: $color_h;
-            background-color: $white;
-            border-radius: 30px;
-            padding: 12px 40px;
-        }
-    }
+.for-btn {
+  text-align: center;
+
+  button {
+    font-size: 17px;
+    font-weight: bold;
+    color: $color_h;
+    background-color: $white;
+    border-radius: 30px;
+    padding: 12px 40px;
+  }
+}
+
+.terms {
+  margin-top: 20px;
+  text-align: center;
+  @include tablet-min-portrait {
+    margin-top: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
 }
