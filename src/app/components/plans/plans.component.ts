@@ -64,8 +64,8 @@ const DESCRIPTIONS: IPlanDescription[] = [
     content: 'Face to face in-home assessment and program set up with Care Manager. Development of Home Care Agreement (care plan, budget and risk assessments)',
   },
   {
-    title: 'Refferral Managment',
-    content: 'service referrals to new service providers',
+    title: 'Referral Management',
+    content: 'Referrals To New Service Providers',
   },
   {
     title: 'Phone Review',
