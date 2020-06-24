@@ -22,8 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    redirectTo: 'home',
-    // loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
+    // redirectTo: 'home',
+    loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
   },
   { path: '**', component: NotFoundComponent }
 ];
