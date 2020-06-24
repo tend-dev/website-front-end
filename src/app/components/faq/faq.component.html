@@ -1,20 +1,20 @@
-<section class="faq-bg" id="faq">
-    <div class="blog">
-        <h2 class="h4">FAQ</h2>
-        <div class="sub">Frequenlty asked questions</div>
+<section class="tend-content-container faq" id="faq">
+  <h2>FAQ</h2>
+  <div class="sub">Frequenlty asked questions</div>
 
-        <div class="gray-wrapper">
-            <div class="question" [ngClass]="{expanded: question.isExpanded}" *ngFor="let question of questions">
-                <span (click)="toggleExpand(question)" class="toggler">
-                    <img *ngIf="!question.isExpanded" src="/assets/img/faq/faq-plus.svg" alt="Toggle">
-                    <span *ngIf="question.isExpanded" class="minus">-</span>
-                </span>
-                <h3>{{ question.question }}</h3>
-                <div class="answer" [ngClass]="{'opened': question.isExpanded}">
-                    {{ question.answer }}
-                </div>
-            </div>
+  <div class="gray-wrapper">
+    <div class="question" [ngClass]="{expanded: question.isExpanded}" *ngFor="let question of questions">
+      <div class="question-header">
+        <h3>{{ question.question }}</h3>
+        <div (click)="toggleExpand(question)" class="toggler">
+          <img *ngIf="!question.isExpanded" src="/assets/img/faq/faq-plus.svg" alt="Toggle">
+          <span *ngIf="question.isExpanded" class="minus">-</span>
         </div>
-
+      </div>
+      <div class="answer" [ngClass]="{'opened': question.isExpanded}">
+        {{ question.answer }}
+      </div>
+      <div class="devider" [ngClass]="{'invisible': question.isExpanded}"></div>
     </div>
+  </div>
 </section>
