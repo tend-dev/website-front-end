@@ -30,9 +30,13 @@ export class MobileMenuComponent {
 
   subscribeToClose() {
     this.linkSub = this.dialogRef.afterClosed().subscribe(() => {
-      this.router.navigate(this.routePath, { fragment: this.fragment });
+      if (this.routePath) {
+        this.router.navigate(this.routePath, { fragment: this.fragment });
+      }
+
       this.routePath = null;
       this.fragment = null;
+
       this.linkSub.unsubscribe();
     })
   }
