@@ -3,7 +3,6 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { TermsComponent } from './pages/terms/terms.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -18,11 +17,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
   },
   {
+    path: 'terms-and-conditions',
+    loadChildren: () => import('./pages/terms/terms.module').then(m => m.TermsModule),
+  },
+  {
     path: 'blog',
     redirectTo: 'home',
     // loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
   },
-  { path: 'terms-and-conditions', component: TermsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
