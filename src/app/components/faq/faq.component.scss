@@ -3,6 +3,9 @@
 
 .faq {
   margin-top: 60px;
+  @include tablet-min-portrait {
+    margin-top: 150px;
+  }
 }
 
 h2 {
