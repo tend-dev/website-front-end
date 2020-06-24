@@ -1,11 +1,11 @@
-<header>
+<header class="tend-container">
   <app-back-button></app-back-button>
-  <div class="title">
+  <div class="title tend-content-container">
     <h1 *ngIf="blog">{{ blog.title }}</h1>
   </div>
 </header>
 
-<section *ngIf="blog">
+<section *ngIf="blog" class="tend-content-container">
   <div class="blog-date">{{ blog.created | date:'longDate' }}</div>
   <img class="main-image" [src]="blog.image" />
   <div class="author">{{ blog.author || 'Unnamed author' }}</div>
