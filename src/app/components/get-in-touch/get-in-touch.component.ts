@@ -8,7 +8,9 @@ import { ContactService } from '@services/contact.service';
 })
 export class GetInTouchComponent implements OnInit {
 
-  constructor(public contactService: ContactService) {}
+  constructor(
+    private contactService: ContactService
+  ) {}
 
   openDialog(): void {
     this.contactService.openDialog();

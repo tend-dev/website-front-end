@@ -2,18 +2,19 @@
 @import '../../../../assets/styles/mixins';
 
 .blog {
-  margin: 0 285px 40px 285px;
-  @include mobile-only {
-    font-size: 45px;
-    margin: 0 30px 20px 30px;
+  margin-bottom: 20px;
+  @include tablet-min-portrait {
+    margin-bottom: 40px;
   }
 }
 
-.h4 {
-  margin: 50px 0 50px;
-  @include h4();
-  @include mobile-only {
-    font-size: 45px;
-    margin: 40px 0 20px 0;
+h1 {
+  @include h1();
+  color: $color_h;
+  margin: 40px 0 20px;
+
+  @include tablet-min-portrait {
+    @include h1-desktop();
+    margin: 50px 0;
   }
 }

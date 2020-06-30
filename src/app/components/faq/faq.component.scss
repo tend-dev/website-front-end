@@ -1,149 +1,183 @@
 @import '../../../assets/styles/variables';
 @import '../../../assets/styles/mixins';
 
-.faq-bg {
-    background-image: url('/assets/img/faq/faq-bg02.png');
-    background-position-y: 80px;
-    background-position-x: 1156px;
-    background-size: 97px 102px;
-    background-repeat: no-repeat;
-    @include mobile-only {
-        background-image: none;
-    }
+.faq {
+  margin-top: 60px;
+  @include tablet-min-portrait {
+    margin-top: 150px;
+  }
 }
 
-.blog {
-    margin: 0 0 40px 0;
-    padding: 0 215px 0 215px;
-    background-image: url('/assets/img/faq/faq-bg01.png');
-    background-position-y: 80px;
-    background-position-x: 150px;
-    background-size: 97px 102px;
+h2 {
+  @include h2();
+  text-align: center;
+
+  @include tablet-min-portrait {
+    @include h2-desktop();
+  }
+}
+
+.sub {
+  @include sub();
+  margin-bottom: 25px;
+  text-align: center;
+
+  @include tablet-min-portrait {
+    @include sub-desktop();
+    margin-bottom: 50px;
+  }
+}
+
+.gray-wrapper {
+  position: relative;
+  padding: 20px 10px 10px;
+  background-color: $faq_bg_color;
+  border-radius: 40px;
+  @include tablet-min-portrait {
+    padding: 60px 40px 40px;
+  }
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: -60px;
+    top: -60px;
+    background-image: url("/assets/img/faq/faq-before.jpg");
     background-repeat: no-repeat;
-    @include mobile-only {
-        width: unset;
-        padding: 0 30px 0 30px;
-        background-image: none;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+    @include tablet-min-portrait {
+      display: block;
     }
+  }
 
-    .h4 {
-        margin-top: 50px;
-        text-align: center;
-        margin-bottom: 0;
-
-        @include h4();
-        @include mobile-only {
-            font-size: 45px;
-            margin-top: 20px;
-        }
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -60px;
+    top: -60px;
+    background-image: url("/assets/img/faq/faq-before.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+    transform: scaleX(-1);
+    @include tablet-min-portrait {
+      display: block;
     }
-    .sub {
-        margin-top: 15px;
-        text-align: center;
-        margin-bottom: 40px;
+  }
+}
 
-        @include sub();
-        @include mobile-only {
-            font-size: 17px;
-            line-height: 25px;
-            margin-bottom: 20px;
-        }
+.question {
+  padding: 0 20px;
+  @include tablet-min-portrait {
+    padding: 40px 60px 0;
+  }
+
+  &.expanded {
+    padding: 20px 20px;
+    background-color: $white;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    @include tablet-min-portrait {
+      padding: 40px 60px;
     }
-    .gray-wrapper {
-        padding: 40px;
+  }
 
-        background-color: $faq_bg_color;
-        border-radius: 40px;
-        @include mobile-only {
-            padding: 10px;
-        }
+  &:last-of-type {
+    .devider {
+      background-color: transparent;
     }
-    .question {
-        padding: 40px 40px 0 40px;
-        @include mobile-only {
-            padding: 15px 20px 0 20px;
-        }
+  }
+}
 
-        &.expanded {
-            background-color: $white;
-            border-radius: 30px;
-        }
+.question-header {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+h3 {
+  flex: 1 auto;
+  @include h3();
+  font-size: 23px;
+  @include tablet-min-portrait {
+    margin-right: 50px;
+    font-size: 33px;
+    line-height: 1.1;
+  }
+}
+
+.toggler {
+  width: 30px;
+  height: 30px;
+  margin-right: -14px;
+  cursor: pointer;
+  @include tablet-min-portrait {
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    @include tablet-min-portrait {
+      width: 40px;
+      height: 40px;
     }
-    h3 {
-        @include h3();
-        margin-right: 50px;
+  }
 
-        margin-top: 0;
-        @include mobile-only {
-            margin-right: unset;
-            font-size: 23px;
-            line-height: 24px;
-            width: 170px;
-        }
+  .minus {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 44px;
+    font-size: 58px;
+    text-align: center;
+    color: $white;
+    background-color: $orange;
+    border-radius: 50%;
 
+    @include tablet-min-portrait {
+      width: 40px;
+      height: 40px;
+      line-height: 58px;
+      font-size: 76px;
     }
-    .toggler {
-        float: right;
-        display: block;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        img {
-            width: 40px;
-            height: 40px;
-            @include mobile-only {
-                width: 30px;
-                height: 30px;
-            }
-        }
-        .minus {
-            display: block;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            color: $white;
-            line-height: 58px;
-            font-size: 76px;
-            background-color: $orange;
-            border-radius: 50%;
+  }
+}
 
-            @include mobile-only {
-                width: 30px;
-                height: 30px;
-                line-height: 44px;
-                font-size: 58px;
-            }
-        }
-        @include mobile-only {
-            position: relative;
-            // top: -20px;
-            right: -14px;
-            width: 30px;
-            height: 30px;
-        }
-    }
-    .answer {
-        @include sub();
+.answer {
+  @include sub();
+  transition: height .15s ease-in-out, opacity .15s ease-in-out;
+  height: 0;
+  opacity: 0;
+  @include tablet-min-portrait {
+    @include sub-desktop();
+    margin-right: 40px;
+  }
 
-        transition: height .15s ease-in-out, opacity .15s ease-in-out, padding-bottom .15s ease-in-out;
-        height: 0;
-        opacity: 0;
-        margin-right: 116px;
-        padding-bottom: 0;
-        @include mobile-only {
-            font-size: 17px;
-            margin-right: 40px;
-            padding-bottom: 0;
-        }
+  &.opened {
+    height: 100%;
+    transition: height .15s ease-in-out, opacity .15s ease-in-out, padding-bottom .15s ease-in-out;
+    opacity: 1;
+  }
+}
 
-        &.opened {
-            height: 100%;
-            transition: height .15s ease-in-out, opacity .15s ease-in-out, padding-bottom .15s ease-in-out;
-            opacity: 1;
-            padding-bottom: 40px;
-            @include mobile-only {
-              padding-bottom: 15px;
-            }
-        }
-    }
+.devider {
+  height: 1px;
+  background-color: $hr_color;
+  margin-bottom: 20px;
+
+  &.invisible {
+    background-color: transparent;
+    margin-bottom: 0;
+  }
 }

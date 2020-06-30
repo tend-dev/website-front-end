@@ -23,7 +23,9 @@ export class BlogsService {
   getBlogs() {
     // ! For Html develop only.
     // Todo: implement whith api
-    const url = environment.production === false ? '/assets/mock-data/blogs.json' : environment.apiURL + 'posts';
+    // const isDev = environment.production === false;
+    const isDev = true;
+    const url = isDev ? '/assets/mock-data/blogs.json' : environment.apiURL + 'posts';
 
     this.http.get<Blog[]>(url)
       .subscribe(blogs => this.blogsSubject$.next(blogs));
@@ -32,7 +34,8 @@ export class BlogsService {
   getBlogById(id: string) {
     // ! For Html develop only.
     // Todo: implement whith api
-    const isDev = environment.production === false;
+    // const isDev = environment.production === false;
+    const isDev = true;
     const url = isDev ? '/assets/mock-data/blogs.json' : `${environment.apiURL}posts/${id}`;
 
     if (isDev) {

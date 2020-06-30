@@ -10,10 +10,10 @@ import { environment } from '@env/environment';
 })
 export class BlogAreaComponent implements OnInit {
   posts: any[];
-  beUrl = '';
+  backEndURL = '';
 
   constructor(private contactService: ContactService) {
-    this.beUrl = environment.beURL;
+    this.backEndURL = environment.backEndURL;
   }
 
   ngOnInit(): void {

@@ -8,21 +8,9 @@
         <img class="close-btn" src="/assets/img/blue-close.png" alt="" width="40" height="40">
     </div>
     <div class="nav">
-        <div>
-            <a [routerLink]='"."' fragment="what-we-do">What we do</a>
-        </div>
-        <div>
-            <a [routerLink]='"."' fragment="services">Our services</a>
-        </div>
-        <div>
-            <a [routerLink]='"."' fragment="why-choose">Why choose Tend?</a>
-        </div>
-        <div>
-            <a [routerLink]='"."' fragment="faq">FAQ</a>
-        </div>
-        <div>
-            <a routerLink="/about-us">About us</a>
-        </div>
+        <a *ngFor="let menuLink of menuLinks$ | async"
+            (click)="routeTo({ routePath: [menuLink.href], fragment: menuLink.fragment })"
+        >{{ menuLink.anchor }}</a>
     </div>
     <div class="btn-wrapper">
         <button (click)="openDialog()" class="btn-contact" mat-flat-button>Contact Us</button>

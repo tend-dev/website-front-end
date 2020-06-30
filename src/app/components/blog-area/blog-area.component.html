@@ -1,20 +1,16 @@
-<section class="blog">
+<section class="tend-content-container blog">
 
-    <div class="h4">Our Writings</div>
+  <h2>Our Writings</h2>
 
-    <div class="wrapper">
-        <div class="col-{{ i+1 }}" *ngFor="let post of posts; index as i">
-            <img *ngIf="post.image" src="{{ beUrl }}{{ post.image }}" alt="">
-
-            <div class="h3">{{ post.title }}</div>
-
-            <div class="created">
-                {{ post.created | date }}
-            </div>
-        </div>
+  <div class="wrapper">
+    <div *ngFor="let post of posts">
+      <img *ngIf="post.image" src="{{ backEndURL }}{{ post.image }}" [alt]="post.title">
+      <h3>{{ post.title }}</h3>
+      <div class="blog-date">{{ post.created | date }}</div>
     </div>
+  </div>
 
-    <div class="for-btn">
-        <button routerLink="/blog" class="btn-contact orange-hover" mat-flat-button>Go to blog</button>
-    </div>
+  <div class="block-btn">
+    <button routerLink="/blog" class="btn-contact orange-hover" mat-flat-button>Go to blog</button>
+  </div>
 </section>

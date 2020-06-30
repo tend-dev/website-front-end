@@ -2,33 +2,48 @@
 @import 'assets/styles/variables';
 @import 'assets/styles/mixins';
 
+* { box-sizing: border-box; }
 html, body { height: 100%; }
-body { margin: 0;
-    font-family: 'Calibre-Regular';
-    letter-spacing: 0;
-    width: 1400px;
-    @include mobile-only {
-        width: 100%;
-    }
-    margin: 0 auto;
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Calibre-Regular';
+  font-size: 17px;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-// override primary color
+// Angular Material
 @import '~@angular/material/theming';
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-light-blue);
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+.tend-container {
+  width: 100%;
+  max-width: map-get($breakpoints-desktop, "max");
+  margin: 0 auto;
 
+  &.wide {
+    max-width: unset;
+  }
+}
 
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
+.tend-content-container {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 30px;
 
-@include angular-material-theme($candy-app-theme);
+  @include tablet-min-portrait {
+    padding: 0;
+  }
+}
 
 .white-snackbar {
-    background: $white;
-    color: $color_text;
-    border-radius: 20px !important;
+  background: $white;
+  color: $color_text;
+  border-radius: 20px !important;
 }
 
 .blue-hover  {
@@ -107,5 +122,25 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
     color: $hr_color;
     background-color: $hr_color;
     height: 1px;
+  }
+}
+
+
+// * <app-our-services>
+
+.services {
+  .mat-tab-label {
+    padding: 0 20px;
+    min-width: 100px;
+  }
+
+  .mat-tab-header {
+    border-bottom: 0 !important;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .mat-ink-bar {
+    background-color: $orange !important;
   }
 }

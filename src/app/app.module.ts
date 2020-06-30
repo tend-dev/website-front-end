@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { TopBannerComponent } from './components/top-banner/top-banner.component';
@@ -30,13 +29,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-snack-bar.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
-import { TermsComponent } from './pages/terms/terms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     NotFoundComponent,
     TopMenuComponent,
     TopBannerComponent,
@@ -50,8 +47,7 @@ import { TermsComponent } from './pages/terms/terms.component';
     ContactFormComponent,
     BlogAreaComponent,
     CustomSnackBarComponent,
-    MobileMenuComponent,
-    TermsComponent
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

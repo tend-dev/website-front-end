@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ContactService } from '@services/contact.service';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
+
+import { ContactService } from '@services/contact.service';
+import { MenuLinksService } from '@services/menu-links/menu-links.service';
+import { MenuLink } from '@models/menu-link.interface';
+
 
 @Component({
   selector: 'app-top-menu',
@@ -9,8 +14,13 @@ import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
   styleUrls: ['./top-menu.component.scss']
 })
 export class TopMenuComponent {
+  menuLinks$: Observable<MenuLink[]> = this.menuLinksService.links$;
 
-  constructor(public contactService: ContactService, public dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private contactService: ContactService,
+    private menuLinksService: MenuLinksService
+  ) {}
 
   openDialog(): void {
     this.contactService.openDialog();

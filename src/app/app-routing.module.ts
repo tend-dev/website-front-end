@@ -3,8 +3,6 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AboutComponent } from './pages/about/about.component';
-import { TermsComponent } from './pages/terms/terms.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -14,13 +12,19 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'about-us', component: AboutComponent },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
+  },
+  {
+    path: 'terms-and-conditions',
+    loadChildren: () => import('./pages/terms/terms.module').then(m => m.TermsModule),
+  },
   {
     path: 'blog',
-    redirectTo: 'home',
-    // loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
+    // redirectTo: 'home',
+    loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
   },
-  { path: 'terms-and-conditions', component: TermsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
