@@ -25,6 +25,10 @@ const routes: Routes = [
     // redirectTo: 'home',
     loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
