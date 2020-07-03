@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
-import { catchError, map, pluck, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 // import { utc as moment } from 'moment';
 
@@ -21,14 +21,8 @@ export class AuthorizationService {
     private tokenService: TokenService
   ) { }
 
-  // ! { "email": "zx@x.com", "pass": "123" } todo: delete
   public signIn({ email, pass }) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-    return this.http.post(`${environment.apiURL}/api/login`, { email, pass }, {headers: {
-      'Content-Type': 'application/json'
-    }})
+    return this.http.post(`${environment.apiURL}/login`, { email, pass })
       .pipe(
         catchError(error => of(error)),
         map((data: ISignInDataResponse) => this.tokenService.setToken(data.token))
