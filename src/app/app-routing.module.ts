@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/authorization/authorization.module').then(m => m.AuthorizationModule)
+  },
   { path: '**', component: NotFoundComponent }
 ];
 

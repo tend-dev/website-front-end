@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert" *ngIf="error">
+        <h4 class="alert-heading">Error</h4>
+        <p>{{error}}</p>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <span class="text-center">Enter to the system</span>
+        </div>
+        <div class="form-group">
+          <label for="email" class="label">Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+          >
+        </div>
+        <div class="form-group">
+          <label for="passwd" class="label">Password</label>
+          <input
+            formControlName="pass"
+            type="password"
+            class="form-control"
+            id="passwd"
+            placeholder="Password"
+          >
+        </div>
+        <button class="btn btn-success" [disabled]="form.invalid">
+          Enter
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
