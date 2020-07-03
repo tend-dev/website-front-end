@@ -37,6 +37,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@env/environment';
 import { EffectsModule } from '@ngrx/effects';
 
+import { CoreModule } from '@core/core.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,8 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     AppEntityDataModule,
-    environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 })
+    environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    CoreModule
 
   ],
   providers: [],

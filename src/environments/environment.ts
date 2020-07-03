@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:8000/api/',
+  apiURL: 'http://192.168.115.53:3000',
   backEndURL: 'https://www.tend.care:446'
 };
 
