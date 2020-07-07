@@ -6,7 +6,7 @@
     <div class="articles-table-data">{{blog.id}}</div>
     <div class="articles-table-data">{{blog.title}}</div>
     <div class="articles-table-data">
-      <img [src]="blog.thumbnail" class="blog-thumbnail">
+      <img src="{{ backEndURL }}/{{ blog.thumbnail }}" class="blog-thumbnail">
     </div>
     <div class="articles-table-data">{{blog.created | date:'longDate'}}</div>
     <div class="articles-table-data">{{blog.author}}</div>

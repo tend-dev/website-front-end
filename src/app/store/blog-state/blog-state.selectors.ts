@@ -15,9 +15,11 @@ export const getBlogSelector = createSelector(
     id: store.id,
     title: store.title,
     content: store.content,
-    created: store.created,
-    author: store.author,
     image: store.image,
-    thumbnail: store.thumbnail
   })
+);
+
+export const getBlogImageUrlSelector = createSelector(
+  getDashboardPageStore,
+  (store: EditBlogState) => store.imageUrl
 );

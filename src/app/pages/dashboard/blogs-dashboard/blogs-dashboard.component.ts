@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { EditBlogState, editBlog } from '@store/blog-state'
 import { BlogsService } from '@services/blogs.service';
 import { Blog } from '@models/blog.interface';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-blogs-dashboard',
@@ -12,9 +13,9 @@ import { Blog } from '@models/blog.interface';
   styleUrls: ['./blogs-dashboard.component.scss']
 })
 export class BlogsDashboardComponent implements OnInit {
-  // public blogs$: Observable<Blog[]> = this.blogsService.blogs$;
   public blogs$: Observable<Blog[]>;
   public loading$: Observable<boolean>;
+  public backEndURL = environment.backEndURL;
 
   constructor(
     private blogsService: BlogsService,
@@ -29,7 +30,10 @@ export class BlogsDashboardComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogsService.getBlogs();
+    this.blogsService.getWithQuery({
+      'page': '1',
+      'perPage': '20'
+    });
   }
 
   delete(blog: Blog) {

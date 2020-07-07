@@ -1,0 +1,37 @@
+<form class="article-form" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <label class="article-form-label">
+    Title
+    <input formControlName="title" type="text">
+  </label>
+
+  <label class="article-form-label">
+    Main image
+    <input
+      formControlName="image"
+      type="file"
+      accept="image/*"
+      (change)="fileChange($event, 'imageUrl', 'imageFile')">
+  </label>
+  <div class="thumbnail-preview">
+    <img [src]="imageUrl">
+  </div>
+
+  <label class="article-form-label">
+    Content
+  </label>
+  <quill-editor
+    [(ngModel)]="htmlText"
+    #editor
+    theme="snow"
+    formControlName="content">
+  </quill-editor>
+
+  <div class="buttons-wrapper">
+    <button type="submit" [disabled]="blogForm.invalid">{{blogIsUpdating ? 'Update' : 'Create'}}</button>
+    <button type="reset" (click)="cancelEditting()">Cancel</button>
+  </div>
+</form>
+
+<div>
+  <div>{{htmlText}}</div>
+</div>

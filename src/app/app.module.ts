@@ -38,6 +38,7 @@ import { environment } from '@env/environment';
 import { EffectsModule } from '@ngrx/effects';
 
 import { CoreModule } from '@core/core.module';
+import { QuillModule } from 'ngx-quill'
 
 @NgModule({
   declarations: [
@@ -78,8 +79,8 @@ import { CoreModule } from '@core/core.module';
     EffectsModule.forRoot([]),
     AppEntityDataModule,
     environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 }),
-    CoreModule
-
+    CoreModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

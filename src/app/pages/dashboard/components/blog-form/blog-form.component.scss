@@ -1,0 +1,18 @@
+// @import
+
+.article-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-form-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail-preview {
+  img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}

@@ -3,10 +3,8 @@ export interface EditBlogState {
   id: string;
   title: string;
   content: string;
-  created: number;
-  author: string;
   image: string;
-  thumbnail: string;
+  imageUrl: string | ArrayBuffer;
 }
 
 export const initialState: EditBlogState = {
@@ -14,8 +12,6 @@ export const initialState: EditBlogState = {
   id: '',
   title: '',
   content: '',
-  created: null,
-  author: '',
   image: '',
-  thumbnail: '',
+  imageUrl: ''
 };

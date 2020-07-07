@@ -1,21 +1,20 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as EditBlogActions from './blog-state.actions';
 import { EditBlogState, initialState } from './blog-state.state';
+import { environment } from '@env/environment';
 
 export const editBlogFeatureKey = 'editBlog';
 
 const editBlogReducer = createReducer(
   initialState,
-  on(EditBlogActions.editBlog, (state: EditBlogState, { id, title, content, created, author, image, thumbnail }: Partial<EditBlogState>) => ({
+  on(EditBlogActions.editBlog, (state: EditBlogState, { id, title, content, image }: Partial<EditBlogState>) => ({
     ...state,
     blogIsUpdating: true,
     id,
     title,
     content,
-    created,
-    author,
     image,
-    thumbnail
+    imageUrl: image ? `${environment.backEndURL}/${image}` : ''
   })),
   on(EditBlogActions.editBlogFinished, (state: EditBlogState) => ({
     ...initialState

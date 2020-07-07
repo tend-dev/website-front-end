@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Blog } from '@models/blog.interface';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-blog-element',
@@ -9,5 +10,6 @@ import { Blog } from '@models/blog.interface';
 })
 export class BlogElementComponent {
   @Input() blog: Blog;
+  public backEndURL = environment.backEndURL;
 
 }
