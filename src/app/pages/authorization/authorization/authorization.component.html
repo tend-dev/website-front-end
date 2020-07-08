@@ -1,38 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="alert alert-danger" role="alert" *ngIf="error">
-        <h4 class="alert-heading">Error</h4>
-        <p>{{error}}</p>
-      </div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <span class="text-center">Enter to the system</span>
-        </div>
-        <div class="form-group">
-          <label for="email" class="label">Email</label>
-          <input
-            formControlName="email"
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Email"
-          >
-        </div>
-        <div class="form-group">
-          <label for="passwd" class="label">Password</label>
-          <input
-            formControlName="pass"
-            type="password"
-            class="form-control"
-            id="passwd"
-            placeholder="Password"
-          >
-        </div>
-        <button class="btn btn-success" [disabled]="form.invalid">
-          Enter
-        </button>
-      </form>
-    </div>
+<div class="tend-content-container">
+  <div class="login ">
+    <h1>Login form</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email"
+                placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="pass">
+      </mat-form-field>
+
+      <button mat-raised-button
+          type="submit"
+          [disabled]="form.invalid"
+          class="form_button"
+          color="primary">Log In</button>
+
+    </form>
+
+    <mat-error *ngIf="error">
+      {{ error }}
+    </mat-error>
   </div>
 </div>

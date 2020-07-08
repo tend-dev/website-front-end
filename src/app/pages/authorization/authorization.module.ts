@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthorizationComponent } from './authorization/authorization.component';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthorizationRoutingModule } from './authorization-routing.module';
-// import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '@core/core.module';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -14,11 +17,14 @@ import { CoreModule } from '@core/core.module';
   imports: [
     CommonModule,
     AuthorizationRoutingModule,
-    // FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // TranslateModule,
-    CoreModule
+    CoreModule,
+
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class AuthorizationModule { }

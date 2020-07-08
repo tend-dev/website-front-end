@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 // import { utc as moment } from 'moment';
 
@@ -24,8 +24,7 @@ export class AuthorizationService {
   public signIn({ email, pass }) {
     return this.http.post(`${environment.apiURL}/login`, { email, pass })
       .pipe(
-        catchError(error => of(error)),
-        map((data: ISignInDataResponse) => this.tokenService.setToken(data.token))
+        map((data: ISignInDataResponse) => this.tokenService.setToken(data.token)),
       );
   }
 

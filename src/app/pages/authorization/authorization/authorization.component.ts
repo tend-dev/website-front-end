@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
 import { AuthorizationService } from '../shared/providers/authorization.service';
 import { Router } from '@angular/router';
 
@@ -10,11 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./authorization.component.scss']
 })
 export class AuthorizationComponent implements OnInit {
-
-  // public faLock = faLock;
-  // public faEnvelope = faEnvelope;
   public form: FormGroup;
   public error: string;
+
+  get email(): AbstractControl { return this.form.get('email'); }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,8 +30,12 @@ export class AuthorizationComponent implements OnInit {
     }
     this.authorizationService.signIn(this.form.value)
       .subscribe(
-        () => this.router.navigate(['/dashboard/blogs']),
-        error => this.error = error
+        () => {
+          this.router.navigate(['/dashboard/blogs'])
+        },
+        error => {
+          this.error = 'Email or password is wrong';
+        }
       );
   }
 
