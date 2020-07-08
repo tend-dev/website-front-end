@@ -1,6 +1,11 @@
 <section class="tend-container wide dashboard-wrapper">
-  <h1>Blogs dashbord</h1>
-  <app-blog-form></app-blog-form>
+  <div class="tend-container">
+    <h1>Blogs dashbord</h1>
+    <app-blog-form></app-blog-form>
+  </div>
+
+  <!-- <div class="mat-elevation-z8">
+  </div> -->
 
   <div *ngFor="let blog of blogs$ | async" class="articles-table-row">
     <div class="articles-table-data">{{blog.id}}</div>

@@ -6,7 +6,9 @@ import { BlogFormComponent } from './blog-form.component';
 import { QuillModule } from 'ngx-quill';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     QuillModule,
 
     MatFormFieldModule,
-    MatDatepickerModule
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [BlogFormComponent]
 })

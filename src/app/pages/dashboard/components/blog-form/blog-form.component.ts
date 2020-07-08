@@ -20,7 +20,6 @@ import { QuillEditorComponent } from 'ngx-quill';
   styleUrls: ['./blog-form.component.scss']
 })
 export class BlogFormComponent implements OnInit, OnDestroy {
-  htmlText: string; // todo: del
   blogForm: FormGroup;
   blogIsUpdating: boolean;
   imageUrl: string | ArrayBuffer;
