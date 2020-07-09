@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { EditBlogState, editBlog } from '@store/blog-state'
@@ -7,15 +7,20 @@ import { BlogsService } from '@services/blogs.service';
 import { Blog } from '@models/blog.interface';
 import { environment } from '@env/environment';
 
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-blogs-dashboard',
   templateUrl: './blogs-dashboard.component.html',
   styleUrls: ['./blogs-dashboard.component.scss']
 })
-export class BlogsDashboardComponent implements OnInit {
-  public blogs$: Observable<Blog[]>;
-  public loading$: Observable<boolean>;
+export class BlogsDashboardComponent implements OnInit, OnDestroy {
   public backEndURL = environment.backEndURL;
+  public displayedColumns: string[] = ['id', 'title', 'thumbnail', 'created', 'author', 'buttons'];
+  public dataSource = new MatTableDataSource<Blog>();
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  private blogsSub: Subscription;
 
   constructor(
     private blogsService: BlogsService,
@@ -23,10 +28,17 @@ export class BlogsDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.blogs$ = this.blogsService.entities$;
-    this.loading$ = this.blogsService.loading$;
+    this.dataSource.paginator = this.paginator;
+
+    this.blogsSub = this.blogsService.entities$.subscribe(blogs => {
+      this.dataSource.data = blogs;
+    })
 
     this.getBlogs();
+  }
+
+  ngOnDestroy(): void {
+    this.blogsSub.unsubscribe();
   }
 
   getBlogs() {
@@ -37,7 +49,10 @@ export class BlogsDashboardComponent implements OnInit {
   }
 
   delete(blog: Blog) {
-    this.blogsService.delete(blog.id);
+    this.blogsService.deleteBlog(blog.id)
+    .subscribe(result => {
+      this.blogsService.removeOneFromCache(blog.id);
+    });
   }
 
   edit(blog: Blog) {

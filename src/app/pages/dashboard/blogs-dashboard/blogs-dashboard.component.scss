@@ -3,6 +3,7 @@
 
 .dashboard-wrapper {
   padding: 0 30px;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -21,20 +22,22 @@ app-blog-form {
   margin-bottom: 50px;
 }
 
-.articles-table,
-.articles-table-header,
-.articles-table-data {
-  border: 1px solid #dee3e2
-}
-
-.articles-table-row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: auto;
-}
-
 .blog-thumbnail {
   width: 100%;
   max-width: 200px;
   max-height: 150px;
+}
+
+
+table {
+  width: 100%;
+}
+
+.title-cell {
+  display: inline-block;
+  max-width: 240px;
+}
+
+.delete-btn {
+  margin-left: 10px;
 }

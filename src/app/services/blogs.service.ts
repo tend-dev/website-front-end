@@ -46,4 +46,10 @@ export class BlogsService extends EntityCollectionServiceBase<Blog> {
       );
   }
 
+  deleteBlog(id) {
+    const url: string = `${environment.apiURL}/blog/${id}`;
+
+    return this.http.delete<Blog>(url, id);
+  }
+
 }

@@ -6,6 +6,8 @@ import { BlogsDashboardComponent } from './blogs-dashboard.component';
 import { BlogFormModule } from '../components/blog-form/blog-form.module';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { MatTableModule } from '@angular/material/table';
     BlogsDashboardRoutingModule,
     BlogFormModule,
 
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule
   ]
 })
 export class BlogsDashboardModule { }
