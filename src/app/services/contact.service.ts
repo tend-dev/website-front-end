@@ -8,7 +8,7 @@ import { environment } from '@env/environment.prod';
 import { ContactFormComponent } from '../components/contact-form/contact-form.component';
 import { ContactForm } from '../models/contact-form.model';
 import { AlertService } from '@app/services/alert.service';
-import { MobileMenuComponent } from '@app/components/mobile-menu/mobile-menu.component';
+// import { MobileMenuComponent } from '@app/components/mobile-menu/mobile-menu.component';
 
 @Injectable({ providedIn: 'root' })
 export class ContactService {
@@ -46,15 +46,7 @@ export class ContactService {
         });
   }
 
-  getPosts() {
-    return this.http.get(environment.apiURL + 'posts');
-  }
-
-  getAllPosts() {
-    return this.http.get(environment.apiURL + 'posts');
-  }
-
   sendContactData(data) {
-    return this.http.post(environment.apiURL + 'send-contact-data', data);
+    return this.http.post(environment.contactApiURL + 'send-contact-data', data);
   }
 }
