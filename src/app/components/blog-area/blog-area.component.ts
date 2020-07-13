@@ -23,7 +23,7 @@ export class BlogAreaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.blogsSub = this.blogsService.entities$.subscribe(blogs => {
-      this.blogs = blogs;
+      this.blogs = blogs.slice(0, 3);
     });
 
     this.getBlogs();

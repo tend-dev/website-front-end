@@ -19,9 +19,14 @@ export class BlogsComponent implements OnInit {
   ngOnInit(): void {
     this.blogs$ = this.blogsService.entities$;
 
+    this.getBlogs();
+  }
+
+  getBlogs() {
     this.blogsService.getWithQuery({
       'page': '1',
-      'perPage': '20'
+      'perPage': '100',
+      'sort': 'descr'
     });
   }
 }
