@@ -28,6 +28,12 @@
 
     </form>
 
+    <ng-container *ngIf="isAuthenticated">
+      <button mat-raised-button
+          (click)="logOut()"
+          color="warn">Log Out</button>
+    </ng-container>
+
     <mat-error *ngIf="error">
       {{ error }}
     </mat-error>
