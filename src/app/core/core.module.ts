@@ -7,6 +7,8 @@ import { LOCAL_STORAGE } from '@services/storage/local-storage.token';
 import { LocalStorageFactory } from '@services/storage/local-storage.factory';
 // Interceptors
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -23,18 +25,17 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
       useClass: TokenInterceptor,
       multi: true
     },
-    // {
+    // { // TODO: implement it to have api cals in one place
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: PrefixInterceptor,
     //   multi: true
     // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: HttpErrorInterceptor,
-    //   multi: true
-    // },
-    // AuthGuard,
-    // LoginGuard
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    },
+    AuthGuard
   ]
 })
 export class CoreModule {
