@@ -25,7 +25,7 @@ export class BlogsComponent implements OnInit {
   getBlogs() {
     this.blogsService.getWithQuery({
       'page': '1',
-      'perPage': '100',
+      'perPage': '200',
       'sort': 'descr'
     });
   }

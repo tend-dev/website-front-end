@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-import { environment } from '@env/environment.prod';
 import { ContactFormComponent } from '../components/contact-form/contact-form.component';
 import { ContactForm } from '../models/contact-form.model';
 import { AlertService } from '@app/services/alert.service';
@@ -47,6 +46,6 @@ export class ContactService {
   }
 
   sendContactData(data) {
-    return this.http.post(environment.contactApiURL + 'send-contact-data', data);
+    return this.http.post('/contact-form', data);
   }
 }

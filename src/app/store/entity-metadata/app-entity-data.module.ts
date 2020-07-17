@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EntityDataModule, DefaultDataServiceConfig } from '@ngrx/data';
 import { entityConfig } from './entity-metadata';
-import { environment } from '@env/environment';
 
 
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
-  root: environment.apiURL,
+  root: '',
   timeout: 30000,
 };
 

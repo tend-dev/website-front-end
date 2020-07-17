@@ -12,7 +12,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { HttpStatusCode } from '@shared/enums/http/http-status-code';
-import { AuthorizationService } from '../../pages/authorization/shared/providers/authorization.service';
+import { AuthorizationService } from '@app/pages/authorization/shared/providers/authorization.service';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -29,7 +29,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   }
 
   private errorHandler(response: HttpErrorResponse): Observable<HttpEvent<any>> {
-    if (response.status === HttpStatusCode.Unauthorized || response.error?.error === 'Token is not valid') {
+    if (response.status === HttpStatusCode.Unauthorized) {
       // TODO: make it via store.dispatch()
       this.authorizationService.signOut().subscribe(() => {
         this.router.navigate(['/login']);

@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
-import { environment } from '@env/environment';
 import { Blog } from '@models/blog.interface';
 
 @Injectable({
@@ -16,6 +15,7 @@ import { Blog } from '@models/blog.interface';
 export class BlogsService extends EntityCollectionServiceBase<Blog> {
   private blogDetailSubject$ = new Subject<Blog>();
   public blog$: Observable<Blog> = this.blogDetailSubject$.asObservable();
+  private urlPrefix = '/blog';
 
   constructor(
     private http: HttpClient,
@@ -25,20 +25,20 @@ export class BlogsService extends EntityCollectionServiceBase<Blog> {
   }
 
   getBlogById(id: string) {
-    const url = `${environment.apiURL}/blog/${id}`;
+    const url = `${this.urlPrefix}/${id}`;
 
     this.http.get<Blog>(url)
       .subscribe(blog => this.blogDetailSubject$.next(blog));
   }
 
   updateBlog(formData: FormData, blog: Partial<Blog>): Observable<Blog> {
-    const url: string = `${environment.apiURL}/blog/${blog.id}`;
+    const url = `${this.urlPrefix}/${blog.id}`;
 
     return this.http.patch<Blog>(url, formData);
   }
 
   createBlog(formData: FormData): Observable<Blog>  {
-    const url: string = `${environment.apiURL}/blog`;
+    const url = this.urlPrefix;
 
     return this.http.post<any>(url, formData)
       .pipe(
@@ -47,7 +47,7 @@ export class BlogsService extends EntityCollectionServiceBase<Blog> {
   }
 
   deleteBlog(id) {
-    const url: string = `${environment.apiURL}/blog/${id}`;
+    const url: string = `${this.urlPrefix}/${id}`;
 
     return this.http.delete<Blog>(url, id);
   }

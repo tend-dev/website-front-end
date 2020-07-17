@@ -7,6 +7,7 @@ import { LOCAL_STORAGE } from '@services/storage/local-storage.token';
 import { LocalStorageFactory } from '@services/storage/local-storage.factory';
 // Interceptors
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { PrefixInterceptor } from './interceptors/prefix.interceptor';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -25,11 +26,11 @@ import { AuthGuard } from './guards/auth.guard';
       useClass: TokenInterceptor,
       multi: true
     },
-    // { // TODO: implement it to have api cals in one place
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: PrefixInterceptor,
-    //   multi: true
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PrefixInterceptor,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
