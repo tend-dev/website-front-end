@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://tend.care:3000/api', // 'http://192.168.115.53:3000/api'
+  apiURL: 'https://tend.care/api', // 'http://192.168.115.53:3000/api'
   contactApiURL: 'http://www.tend.care:446/api/',
-  backEndURL: 'http://tend.care:3000' // 'http://192.168.115.53:3000'
+  backEndURL: 'https://tend.care' // 'http://192.168.115.53:3s000'
 };
 
 /*
