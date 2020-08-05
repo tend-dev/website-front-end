@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiURL: 'https://tend.care/api', // 'http://192.168.115.53:3000/api'
   contactApiURL: 'http://www.tend.care:446/api/',
-  backEndURL: 'https://tend.care' // 'http://192.168.115.53:3s000'
+  backEndURL: 'https://tend.care', // 'http://192.168.115.53:3s000'
+  intercomAppId: 'lfqrz83d'
 };
 
 /*

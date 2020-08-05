@@ -40,6 +40,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { CoreModule } from '@core/core.module';
 import { QuillModule } from 'ngx-quill'
 
+import { IntercomChatModule } from './modules/embedded/intercom-chat/intercom-chat.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +82,8 @@ import { QuillModule } from 'ngx-quill'
     AppEntityDataModule,
     environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 }),
     CoreModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    IntercomChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]
