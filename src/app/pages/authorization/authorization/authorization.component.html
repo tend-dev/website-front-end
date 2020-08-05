@@ -1,0 +1,41 @@
+<div class="tend-content-container">
+  <div class="login ">
+    <h1>Login form</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email"
+                placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="pass">
+      </mat-form-field>
+
+      <button mat-raised-button
+          type="submit"
+          [disabled]="form.invalid"
+          class="form_button"
+          color="primary">Log In</button>
+
+    </form>
+
+    <ng-container *ngIf="isAuthenticated">
+      <button mat-raised-button
+          (click)="logOut()"
+          color="warn">Log Out</button>
+    </ng-container>
+
+    <mat-error *ngIf="error">
+      {{ error }}
+    </mat-error>
+  </div>
+</div>

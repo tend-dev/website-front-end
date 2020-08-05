@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://159.65.47.27:3000",
+    "secure": false
+  }
+}

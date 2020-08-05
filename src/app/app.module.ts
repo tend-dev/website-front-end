@@ -30,6 +30,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-snack-bar.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 
+// * NgRx Store
+import { StoreModule } from '@ngrx/store';
+import { AppEntityDataModule } from '@store/entity-metadata/app-entity-data.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '@env/environment';
+import { EffectsModule } from '@ngrx/effects';
+
+import { CoreModule } from '@core/core.module';
+import { QuillModule } from 'ngx-quill'
+
+import { IntercomChatModule } from './modules/embedded/intercom-chat/intercom-chat.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +75,15 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
     MatDialogModule,
     MatInputModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    AppEntityDataModule,
+    environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    CoreModule,
+    QuillModule.forRoot(),
+    IntercomChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]

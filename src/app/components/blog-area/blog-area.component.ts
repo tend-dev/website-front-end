@@ -1,29 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { ContactService } from '@services/contact.service';
+import { BlogsService } from '@services/blogs.service';
 import { environment } from '@env/environment';
+import { Blog } from '@models/blog.interface';
 
 @Component({
   selector: 'app-blog-area',
   templateUrl: './blog-area.component.html',
   styleUrls: ['./blog-area.component.scss']
 })
-export class BlogAreaComponent implements OnInit {
-  posts: any[];
+export class BlogAreaComponent implements OnInit, OnDestroy {
+  blogs: Blog[];
   backEndURL = '';
+  private blogsSub: Subscription;
 
-  constructor(private contactService: ContactService) {
+  constructor(
+    private blogsService: BlogsService
+  ) {
     this.backEndURL = environment.backEndURL;
   }
 
   ngOnInit(): void {
-    this.contactService.getPosts()
-      .subscribe((posts: any[]) => {
-        this.posts = posts.slice(0, 3).map((post) => {
-          delete post.content;
+    this.blogsSub = this.blogsService.entities$.subscribe(blogs => {
+      this.blogs = blogs.slice(0, 3);
+    });
 
-          return post;
-        });
-      });
+    this.getBlogs();
+  }
+
+  ngOnDestroy() {
+    this.blogsSub.unsubscribe();
+  }
+
+  getBlogs() {
+    this.blogsService.getWithQuery({
+      'page': '1',
+      'perPage': '3',
+      'sort': 'descr'
+    });
   }
 }

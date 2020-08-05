@@ -1,0 +1,17 @@
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  max-width: 460px;
+  padding: 30px;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}

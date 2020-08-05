@@ -1,0 +1,37 @@
+<form class="blog-form mat-elevation-z8" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Title</mat-label>
+    <input matInput type="text" formControlName="title">
+  </mat-form-field>
+
+  <label for="uploadPicture" class="upload-file">
+    <mat-icon>add_a_photo</mat-icon>
+    <span>Add image</span>
+  </label>
+  <input
+    formControlName="image"
+    hidden
+    type="file"
+    id="uploadPicture"
+    class="hidden-input"
+    accept="image/jpeg, .jpeg, image/png, .png, image/pjpeg, .jpg"
+    (change)="fileChange($event, 'imageUrl', 'imageFile')">
+
+  <div class="thumbnail-preview">
+    <img [src]="imageUrl">
+  </div>
+
+  <label class="blog-form-label">
+    Content
+  </label>
+  <quill-editor
+    #editor
+    theme="snow"
+    formControlName="content">
+  </quill-editor>
+
+  <div class="buttons-wrapper">
+    <button type="submit" class="submit" mat-flat-button color="primary" [disabled]="blogForm.invalid">{{blogIsUpdating ? 'Update' : 'Create'}}</button>
+    <button type="reset" mat-flat-button color="warn" (click)="cancelEditting()">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,43 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.dashboard-wrapper {
+  padding: 0 30px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  @include h1();
+  color: $color_h;
+  margin: 40px 0 20px;
+
+  @include tablet-min-portrait {
+    @include h1-desktop();
+    margin: 50px 0;
+  }
+}
+
+app-blog-form {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.blog-thumbnail {
+  width: 100%;
+  max-width: 200px;
+  max-height: 150px;
+}
+
+
+table {
+  width: 100%;
+}
+
+.title-cell {
+  display: inline-block;
+  max-width: 240px;
+}
+
+.delete-btn {
+  margin-left: 10px;
+}

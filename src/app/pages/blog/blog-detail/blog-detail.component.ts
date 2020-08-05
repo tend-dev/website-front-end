@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { BlogsService } from '@services/blogs.service';
 import { Blog } from '@models/blog.interface';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-blog-detail',
@@ -11,6 +12,7 @@ import { Blog } from '@models/blog.interface';
   styleUrls: ['./blog-detail.component.scss']
 })
 export class BlogDetailComponent implements OnInit, OnDestroy {
+  public backEndURL = environment.backEndURL;
   public blog: Blog;
   private blogSub: Subscription;
 

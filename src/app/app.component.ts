@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IntercomChatService } from './modules/embedded/intercom-chat/intercom-chat.service';
 
 
 @Component({
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'careof-tt';
+
+  constructor(
+    private intercomChatService: IntercomChatService
+  ) { }
+
+  ngOnInit() {
+    this.intercomChatService.init();
+  }
 }

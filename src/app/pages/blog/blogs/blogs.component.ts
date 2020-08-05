@@ -10,13 +10,23 @@ import { Blog } from '@models/blog.interface';
   styleUrls: ['./blogs.component.scss']
 })
 export class BlogsComponent implements OnInit {
-  public blogs$: Observable<Blog[]> = this.blogsService.blogs$;
+  public blogs$: Observable<Blog[]>;
 
   constructor(
     private blogsService: BlogsService
   ) { }
 
   ngOnInit(): void {
-    this.blogsService.getBlogs();
+    this.blogs$ = this.blogsService.entities$;
+
+    this.getBlogs();
+  }
+
+  getBlogs() {
+    this.blogsService.getWithQuery({
+      'page': '1',
+      'perPage': '200',
+      'sort': 'descr'
+    });
   }
 }

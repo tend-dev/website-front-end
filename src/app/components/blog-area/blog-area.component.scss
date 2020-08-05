@@ -39,6 +39,11 @@ h2 {
   }
 }
 
+.blog-element {
+  display: block;
+  text-decoration: none;
+}
+
 h3 {
   @include h3();
   @include h3-desktop();

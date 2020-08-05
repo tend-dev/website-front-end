@@ -1,0 +1,35 @@
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.upload-file {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+    padding-top: 8px;
+  }
+}
+
+.blog-form-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail-preview {
+  img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}
+
+.buttons-wrapper {
+  margin: 18px 0;
+}
+
+.submit {
+  margin-right: 10px;
+}
