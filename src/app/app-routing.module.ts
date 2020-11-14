@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard } from '@core/guards/auth.guard';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
+  },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./pages/privacy/privacy.module').then(m => m.PrivacyModule),
   },
   {
     path: 'terms-and-conditions',
