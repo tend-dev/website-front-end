@@ -9,76 +9,50 @@ const PLANS: IPlan[] = [
     label: 'Best Value',
     points: [
       {
-        text: '1h 30min',
+        text: '',
       },
       {
         text: 'Unlimited',
+        // clarification: 'Plus As Needed',
       },
       {
-        text: 'Every 3 months',
-        clarification: 'Plus As Needed',
-      },
-      {
-        text: 'Every 6 months',
-        clarification: 'Plus As Needed',
-      },
-      {
-        text: '1 Hour',
+        text: 'Unlimited'
       },
       {
         text: 'Unlimited 24/7',
       },
-    ],
-    percents: 24,
-  },
-  {
-    header: 'Basic',
-    points: [
       {
-        text: '1h 30min',
+        text: '',
       },
       {
-        text: 'Initial Set-up and Review',
-        clarification: '(additinal referrals charged per 15min)',
-      },
-      {
-        text: 'Every 6 months',
-      },
-      {
-        text: 'Annual Review',
-      },
-      {
-        text: '1 Hour',
-      },
-      {
-        text: 'Unlimited 24/7',
+        text: '',
       },
     ],
-    percents: 19,
+    percents: 17.5,
   }
 ]
 
 const DESCRIPTIONS: IPlanDescription[] = [
   {
     title: 'Initial Visit',
-    content: 'Face to face in-home assessment and program set up with Care Manager. Development of Home Care Agreement (care plan, budget and risk assessments)',
+    content: 'Face to face in home assessment and program set up with Care Manager, Development of Support Plan, Budget and Risk Assessments, Signing of Home Care Agreement',
+  },
+  {
+    title: 'Phone Contact with Care Manager',
   },
   {
     title: 'Referral Management',
-    content: 'Referrals To New Service Providers',
+    content: 'Referrals to  service providers',
   },
   {
-    title: 'Phone Review',
-  },
-  {
-    title: 'In-Home Visit',
+    title: 'Scheduling of Services',
   },
   {
     title: 'Annual Review',
-    content: 'Face to face in-home program review with Care Manager',
+    content: 'Face to face in-home program reviews with Care Manager',
   },
   {
-    title: 'Direct Care Scheduling',
+    title: 'Administration/Government compliance',
   }
 ]
 
