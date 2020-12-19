@@ -65,21 +65,21 @@ export class BlogFormComponent implements OnInit, OnDestroy {
     this.cancelEditting();
   }
 
-  createBlog(blog: FormData) {
-    this.blogsService.createBlog(blog)
-      .subscribe(result => {
-        this.blogsService.addOneToCache(result);
-        this.cancelEditting();
-      });
-  }
+  //   (blog: FormData) {
+  //   // this.blogsService.createBlog(blog)
+  //   //   .subscribe(result => {
+  //   //     this.blogsService.addOneToCache(result);
+  //   //     this.cancelEditting();
+  //   //   });
+  // }
 
-  updateBlog(blog: FormData, blogValues) {
-    this.blogsService.updateBlog(blog, blogValues)
-      .subscribe(result => {
-        this.blogsService.updateOneInCache(result);
-        this.cancelEditting();
-      });
-  }
+  // updateBlog(blog: FormData, blogValues) {
+  //   this.blogsService.updateBlog(blog, blogValues)
+  //     .subscribe(result => {
+  //       this.blogsService.updateOneInCache(result);
+  //       this.cancelEditting();
+  //     });
+  // }
 
   onSubmit() {
     if (this.blogForm.invalid) {
@@ -102,11 +102,11 @@ export class BlogFormComponent implements OnInit, OnDestroy {
 
     const blogFormData = this.mapToMultiformData(blogRaw);
 
-    if (this.blogIsUpdating) {
-      this.updateBlog(blogFormData as FormData, blogRaw);
-    } else {
-      this.createBlog(blogFormData as FormData);
-    }
+    // if (this.blogIsUpdating) {
+    //   this.updateBlog(blogFormData as FormData, blogRaw);
+    // } else {
+    //   this.createBlog(blogFormData as FormData);
+    // }
 
   }
 

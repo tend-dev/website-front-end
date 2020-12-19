@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 import { BlogsService } from '@services/blogs.service';
 import { Blog } from '@models/blog.interface';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-blogs',
@@ -10,23 +11,18 @@ import { Blog } from '@models/blog.interface';
   styleUrls: ['./blogs.component.scss']
 })
 export class BlogsComponent implements OnInit {
-  public blogs$: Observable<Blog[]>;
-
+  public blogs$: any[];
+  public subject = new Subject<string>();
   constructor(
     private blogsService: BlogsService
   ) { }
-
+  
   ngOnInit(): void {
-    this.blogs$ = this.blogsService.entities$;
-
-    this.getBlogs();
-  }
-
-  getBlogs() {
-    this.blogsService.getWithQuery({
-      'page': '1',
-      'perPage': '200',
-      'sort': 'descr'
+    let output = [];
+    this.blogsService.getBlogPostsFromBubble().subscribe((data:any)=> {
+      this.blogs$ = data;
+      console.log(this.blogs$);
     });
   }
+
 }

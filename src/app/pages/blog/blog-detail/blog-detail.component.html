@@ -7,8 +7,8 @@
 
 <section *ngIf="blog" class="tend-content-container">
   <div class="blog-date">{{ blog.created | date:'longDate' }}</div>
-  <img class="main-image" src="{{ backEndURL }}/{{ blog.image }}" />
-  <div class="author">{{ blog.authorName || 'Unnamed author' }}</div>
+  <img class="main-image" src="http:{{ blog.image }}" />
+  <!-- <div class="author">{{ blog.authorName || 'Unnamed author' }}</div> -->
   <div class="dynamic-blog-content" [innerHTML]="blog.content"></div>
   <hr />
   <div class="blog-footer">

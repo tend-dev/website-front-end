@@ -5,7 +5,7 @@
   <div class="wrapper">
     <div *ngFor="let blog of blogs">
       <a [routerLink]="['/blog', blog.id]" class="blog-element">
-        <img *ngIf="blog.image" src="{{ backEndURL }}/{{ blog.thumbnail }}" [alt]="blog.title">
+        <img *ngIf="blog.image" src="http:{{ blog.thumbnail }}" [alt]="blog.title">
         <h3>{{ blog.title }}</h3>
         <div class="blog-date">{{ blog.created | date }}</div>
       </a>

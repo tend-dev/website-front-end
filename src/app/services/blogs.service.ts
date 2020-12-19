@@ -3,19 +3,21 @@ import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable, Subject, of, Subscription } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
-import { Blog } from '@models/blog.interface';
+import { Blog, BlogPostResponse } from '@models/blog.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogsService extends EntityCollectionServiceBase<Blog> {
-  private blogDetailSubject$ = new Subject<Blog>();
-  public blog$: Observable<Blog> = this.blogDetailSubject$.asObservable();
+  private blogDetailSubject$ = new Subject<string>();
+  public blog$: Observable<string> = this.blogDetailSubject$.asObservable();
   private urlPrefix = '/blog';
+  private apiURL = 'https://recommend.careof.com.au/api/1.1/wf/';
 
   constructor(
     private http: HttpClient,
@@ -24,26 +26,82 @@ export class BlogsService extends EntityCollectionServiceBase<Blog> {
     super('Blog', serviceElementsFactory);
   }
 
+  getBlogPostsFromBubble(): Observable<any> {
+    var subject = new Subject<any[]>();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer cd66bf825799d2cd127e640a5767cfeb',
+        'Content-Type' : 'text/plain'
+      })
+    };
+    this.http.post<any>(this.apiURL + 'GetBlogPosts', { httpOptions}).subscribe(
+      items => {
+        let out = [];
+        items.response.blogposts.map(post => {
+          let obj = {
+              id: post._id,
+              title: post.Title,
+              content: post.Content,
+              created: post['Created Date'],
+              author: post['Created By'],
+              image: post.Thumbnail,
+              thumbnail: post.Thumbnail
+            }
+            out.push(obj);
+        });
+        subject.next(out);
+      }
+    );
+
+    return subject.asObservable();
+  }
+
   getBlogById(id: string) {
-    const url = `${this.urlPrefix}/${id}`;
+    var subject = new Subject<any>();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer cd66bf825799d2cd127e640a5767cfeb',
+        'Content-Type' : 'text/plain'
+      })
+    };
+    let body = {
+      'id' : id
+    }
+    this.http.post<any>(this.apiURL + '/GetBlogPost?id=' + id, httpOptions).subscribe(
+      r => {
+        let post = r.response.blogpost;
+        let out = {
+          id: post._id,
+          title: post.Title,
+          content: post.Content,
+          created: post['Created Date'],
+          author: post['Created By'],
+          authorName: post['Created By'],
+          image: post.Thumbnail,
+          thumbnail: post.Thumbnail
+        };
+        subject.next(out);
+      }
+    );
 
-    this.http.get<Blog>(url)
-      .subscribe(blog => this.blogDetailSubject$.next(blog));
+    return subject.asObservable();
   }
 
-  updateBlog(formData: FormData, blog: Partial<Blog>): Observable<Blog> {
-    const url = `${this.urlPrefix}/${blog.id}`;
+  updateBlog(formData: FormData, blog: Partial<Blog>): string {
+    // const url = `${this.urlPrefix}/${blog.id}`;
 
-    return this.http.patch<Blog>(url, formData);
+    // return this.http.patch<Blog>(url, formData);
+    return ''
   }
 
-  createBlog(formData: FormData): Observable<Blog>  {
-    const url = this.urlPrefix;
+  createBlog(formData: FormData): string  {
+    // const url = this.urlPrefix;
 
-    return this.http.post<any>(url, formData)
-      .pipe(
-        pluck('data')
-      );
+    // return this.http.post<any>(url, formData)
+    //   .pipe(
+    //     pluck('data')
+    //   );
+    return ''
   }
 
   deleteBlog(id) {

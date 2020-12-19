@@ -8,6 +8,6 @@ import { Blog } from '@models/blog.interface';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogListComponent {
-  @Input() blogs: Blog[];
+  @Input() blogs: any[];
 
 }

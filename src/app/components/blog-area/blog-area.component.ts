@@ -22,11 +22,9 @@ export class BlogAreaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.blogsSub = this.blogsService.entities$.subscribe(blogs => {
-      this.blogs = blogs.slice(0, 3);
+    this.blogsSub = this.blogsService.getBlogPostsFromBubble().subscribe((data:any)=> {
+      this.blogs = data.slice(0,3);
     });
-
-    this.getBlogs();
   }
 
   ngOnDestroy() {
@@ -34,10 +32,6 @@ export class BlogAreaComponent implements OnInit, OnDestroy {
   }
 
   getBlogs() {
-    this.blogsService.getWithQuery({
-      'page': '1',
-      'perPage': '3',
-      'sort': 'descr'
-    });
+    
   }
 }

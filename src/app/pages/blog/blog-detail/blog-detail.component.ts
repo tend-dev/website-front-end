@@ -13,6 +13,7 @@ import { environment } from '@env/environment';
 })
 export class BlogDetailComponent implements OnInit, OnDestroy {
   public backEndURL = environment.backEndURL;
+  public blogResponse: string;
   public blog: Blog;
   private blogSub: Subscription;
 
@@ -23,7 +24,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.blogSub = this.blogsService.blog$
-      .subscribe(blog => this.blog = blog);
+      .subscribe(blog => this.blogResponse = blog);
 
     this.getBlog();
   }
@@ -34,6 +35,9 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
 
   getBlog(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.blogsService.getBlogById(id);
+    this.blogsService.getBlogById(id).subscribe((data:any)=> {
+      this.blog = data;
+      console.log(this.blog);
+    });
   }
 }

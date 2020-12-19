@@ -8,3 +8,7 @@ export interface Blog {
   image: string;
   thumbnail: string;
 }
+
+export interface BlogPostResponse {
+  response: string;
+}
