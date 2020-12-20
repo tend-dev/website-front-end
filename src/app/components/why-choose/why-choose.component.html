@@ -16,7 +16,7 @@
   <div class="info" *ngFor="let item of items">
     <img [src]="item.image" [ngClass]="{'img-aligned': item.imageAligned}" />
     <h3>{{ item.title }}</h3>
-    <p>{{ item.content }}</p>
+    <p [innerHTML]="item.content"></p>
   </div>
 
 </section>
