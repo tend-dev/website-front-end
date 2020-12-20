@@ -4,22 +4,17 @@ import { IFAQ } from '@models/faq-question.interface';
 const QUESTIONS: IFAQ[] = [
   {
     question: 'Where is Tend available?',
-    answer: 'We operate in all of Melbourne.',
+    answer: 'We operate in all of Melbourne, VIC and the Sunshine Coast QLD',
     isExpanded: true
   },
   {
-    question: 'Is Tend’s offering a “self-management” service?',
-    answer: 'Tend’s service is full care management service which is different from self-management. Under self management you are responsible for sourcing and scheduling your in-home services. Tend will introduce you to the best in home services, set up those services and provide on-going scheduling.',
+    question: 'Does Tend offer "self-managment"?',
+    answer: 'We call our service "flexible management". Clients can "self-manage" or get full managment and move freely between the two extremes all for the same price of 17.5%.',
     isExpanded: false
   },
   {
-    question: 'Does Tend also charge for Package Administration?',
-    answer: 'Many providers will break it down into two different costs - package management and care management. But we think it is easier for you if we give you one price for both the care management and administration. So the cost you see in our Pricing Plan is the total cost you will pay.',
-    isExpanded: false
-  },
-  {
-    question: 'Does Tend charge any Basic Daily Fee, Establishment Fee or Exit Fee?',
-    answer: 'No. At Tend, you just pay for your Care Management.',
+    question: 'Does Tend charge anything outside of the 17.5%?',
+    answer: 'Tend only charges for in-home face to face care management by our professional care managers when requested by clients. The Initial Assessment and Annual Review are included in our 17.5% care management fee.',
     isExpanded: false
   },
   {
