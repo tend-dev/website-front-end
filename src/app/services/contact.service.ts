@@ -52,6 +52,7 @@ export class ContactService {
         'Content-Type' : 'text/plain'
       })
     };    
-    return this.http.post('https://recommend.careof.com.au/api/1.1/wf/SendEmail?to=woods@ustwo.com&subject=TendContactForm&content=' + JSON.stringify(data), httpOptions);
+    
+    return this.http.post('https://recommend.careof.com.au/api/1.1/wf/SendEmail?to=jeremy@tend.care&subject=TendContactForm&content=' + JSON.stringify(data), httpOptions);
   }
 }
