@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -46,6 +46,12 @@ export class ContactService {
   }
 
   sendContactData(data) {
-    return this.http.post('/contact-form', data);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer cd66bf825799d2cd127e640a5767cfeb',
+        'Content-Type' : 'text/plain'
+      })
+    };    
+    return this.http.post('https://recommend.careof.com.au/api/1.1/wf/SendEmail?to=woods@ustwo.com&subject=TendContactForm&content=' + JSON.stringify(data), httpOptions);
   }
 }
