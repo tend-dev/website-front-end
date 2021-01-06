@@ -1,0 +1,30 @@
+<section class="care-management-page tend-content-container">
+  <h1>Care Management</h1>
+  <div class="top-block">
+    <div class="section-image">
+      <img src="/assets/img/care-management-img.png" alt="Care Management image">
+    </div>
+
+    <div class="half-wide-content">
+      <div class="sub">
+        <p>Tend specialises in the management of Australian Government Home Care Packages.</p>
+        <p>Whether you want to "self-manage" or need full care management our flat fee of 17.5% allows you to use your Home Care Package as you want and get the care management that suits you.</p>
+        <p>Our service allows you to be in full control of your Home Care Package while also enjoying the expertise and unbiased advice of our Professional Care Managers whenever you need it.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Learn about Care Management</h2>
+  <p>Read through the below to discover more about how care management works.</p>
+  <div class="topics">
+    <ng-container *ngFor="let topic of topics">
+      <div class="topic-container">
+        <div class="topic">
+          <h3>{{topic.name}}</h3>
+          <p>{{topic.description}}</p>
+          <a [routerLink]="['/care-management', topic.link]" class="read-more">Read more...</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+<app-get-in-touch></app-get-in-touch>

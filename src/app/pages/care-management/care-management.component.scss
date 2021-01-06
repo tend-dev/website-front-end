@@ -1,0 +1,119 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.care-management-page {
+  margin-bottom: 60px;
+  @include tablet-min-portrait {
+    margin-bottom: 150px;
+  }
+}
+
+h1 {
+  @include h1();
+  color: $color_h;
+  margin: 40px 0 20px;
+
+  @include tablet-min-portrait {
+    @include h1-desktop();
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  @include h2();
+
+  @include tablet-min-portrait {
+    @include h2-desktop();
+  }
+}
+
+p {
+  @include sub();
+  @include tablet-min-portrait {
+    @include sub-desktop();
+  }
+}
+
+
+.top-block {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet-min-portrait {
+    flex-direction: row;
+  }
+}
+
+.section-image {
+  max-width: 260px;
+  margin: 0 auto;
+
+  @include tablet-min-portrait {
+    order: 1;
+    max-width: 50%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.half-wide-content {
+  @include tablet-min-portrait {
+    flex-basis: 370px;
+  }
+}
+
+h2 {
+  @include h2();
+
+  @include tablet-min-portrait {
+    @include h2-desktop();
+  }
+}
+
+
+h3 {
+  @include h3();
+  color: $color_text;
+  margin-bottom: 18px;
+
+  @include tablet-min-portrait {
+    @include h3-desktop();
+    font-size: 28px;
+  }
+}
+
+.topics {
+display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include tablet-min-portrait {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+}
+
+.topic {
+  background: #F7F7FA;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.read-more {
+  font-family: 'Calibre-Regular';
+  font-size: 17px;
+  line-height: 1.67;
+  color: $orange;
+  text-decoration: none;
+  text-align: right;
+  display: block;
+  @include desktop-only {
+    font-size: 23px;
+    line-height: 1.3;
+  }
+}

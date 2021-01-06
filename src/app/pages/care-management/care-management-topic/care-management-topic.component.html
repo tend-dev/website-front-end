@@ -1,0 +1,15 @@
+<header class="tend-container">
+  <div class="title tend-content-container">
+    <h1 *ngIf="topic">{{ topic.name }}</h1>
+  </div>
+</header>
+
+<section *ngIf="topic" class="tend-content-container">
+  <div>
+    {{topic.description}}
+  </div>
+</section>
+
+<footer>
+  <app-get-in-touch></app-get-in-touch>
+</footer>
